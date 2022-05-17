@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="add_icon.png" />
+    <None Remove="publish_icon.png" />
+    <None Remove="save_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="add_icon.png" />
+    <Resource Include="publish_icon.png" />
+    <Resource Include="save_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
 </Project>

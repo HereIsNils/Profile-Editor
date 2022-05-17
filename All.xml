@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UserSettings>
+    <AppLevelNames>
+        <AppLevelName>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!-- string - 1-25 length -->
+            <Value>Exkavation</Value>
+        </AppLevelName>
+        <AppLevelName>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!-- string - 1-25 length -->
+            <Value>Präparation</Value>
+        </AppLevelName>
+        <AppLevelName>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!-- string - 1-25 length -->
+            <Value>Prophylaxe</Value>
+        </AppLevelName>
+    </AppLevelNames>
+    <ChairPositions>
+        <ChairPosition>
+            <!--ChairPosition AP0-->
+            <Position>1</Position>
+            <!--Axis 1: chair up/down (in 1%)-->
+            <Axis1>25</Axis1>
+            <!--Axis 2: backrest up/down (in 1%)-->
+            <Axis2>50</Axis2>
+            <!--Axis 3: seat correction front/back (in 1%)-->
+            <Axis3>80</Axis3>
+            <!--Axis 4: headrest hight (in 1%)-->
+            <Axis4>0</Axis4>
+            <!--Axis 5: headrest tilt (in 1%)-->
+            <Axis5>35</Axis5>
+            <!--Axis 6: seat tilt (in 1%)-->
+            <Axis6>0</Axis6>
+        </ChairPosition>
+        <ChairPosition>
+            <!--ChairPosition AP1-->
+            <Position>2</Position>
+            <!--Axis 1: chair up/down (in 1%)-->
+            <Axis1>60</Axis1>
+            <!--Axis 2: backrest up/down (in 1%)-->
+            <Axis2>1</Axis2>
+            <!--Axis 3: seat correction front/back (in 1%)-->
+            <Axis3>20</Axis3>
+            <!--Axis 4: headrest hight (in 1%)-->
+            <Axis4>0</Axis4>
+            <!--Axis 5: headrest tilt (in 1%)-->
+            <Axis5>0</Axis5>
+            <!--Axis 6: seat tilt (in 1%)-->
+            <Axis6>0</Axis6>
+        </ChairPosition>
+        <ChairPosition>
+            <!--ChairPosition AP2-->
+            <Position>3</Position>
+            <!--Axis 1: chair up/down (in 1%)-->
+            <Axis1>35</Axis1>
+            <!--Axis 2: backrest up/down (in 1%)-->
+            <Axis2>15</Axis2>
+            <!--Axis 3: seat correction front/back (in 1%)-->
+            <Axis3>30</Axis3>
+            <!--Axis 4: headrest hight (in 1%)-->
+            <Axis4>0</Axis4>
+            <!--Axis 5: headrest tilt (in 1%)-->
+            <Axis5>80</Axis5>
+            <!--Axis 6: seat tilt (in 1%)-->
+            <Axis6>0</Axis6>
+        </ChairPosition>
+        <ChairPosition>
+            <!--ChairPosition SP-->
+            <Position>4</Position>
+            <!--Axis 1: chair up/down (in 1%)-->
+            <Axis1>40</Axis1>
+            <!--Axis 2: backrest up/down (in 1%)-->
+            <Axis2>50</Axis2>
+            <!--Axis 3: seat correction front/back (in 1%)-->
+            <Axis3>50</Axis3>
+            <!--Axis 4: headrest hight (in 1%)-->
+            <Axis4>0</Axis4>
+            <!--Axis 5: headrest tilt (in 1%)-->
+            <Axis5>35</Axis5>
+            <!--Axis 6: seat tilt (in 1%)-->
+            <Axis6>0</Axis6>
+        </ChairPosition>
+        <ChairPosition>
+            <!--ChairPosition EP-->
+            <Position>5</Position>
+            <!--Axis 1: chair up/down (in 1%)-->
+            <Axis1>45</Axis1>
+            <!--Axis 2: backrest up/down (in 1%)-->
+            <Axis2>1</Axis2>
+            <!--Axis 3: seat correction front/back (in 1%)-->
+            <Axis3>45</Axis3>
+            <!--Axis 4: headrest hight (in 1%)-->
+            <Axis4>0</Axis4>
+            <!--Axis 5: headrest tilt (in 1%)-->
+            <Axis5>25</Axis5>
+            <!--Axis 6: seat tilt (in 1%)-->
+            <Axis6>0</Axis6>
+        </ChairPosition>
+    </ChairPositions>
+    <Instruments>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 1-->
+            <Holder>1</Holder>
+            <!--instrument type Multiflex/Turbine-->
+            <InstrumentType>7</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 2-->
+            <Holder>2</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 3-->
+            <Holder>3</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 4-->
+            <Holder>4</Holder>
+            <!--instrument type Syringe-->
+            <InstrumentType>5</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 5-->
+            <Holder>5</Holder>
+            <!--instrument type Scaler-->
+            <InstrumentType>6</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--mode P3-->
+            <Auxiliary>3</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic1-->
+            <AppLevel>1</AppLevel>
+            <!--holder 6-->
+            <Holder>6</Holder>
+            <!--instrument type Unused-->
+            <InstrumentType>0</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 1-->
+            <Holder>1</Holder>
+            <!--instrument type Multiflex/Turbine-->
+            <InstrumentType>7</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 2-->
+            <Holder>2</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 3-->
+            <Holder>3</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 4-->
+            <Holder>4</Holder>
+            <!--instrument type Syringe-->
+            <InstrumentType>5</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 5-->
+            <Holder>5</Holder>
+            <!--instrument type Scaler-->
+            <InstrumentType>6</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--mode P3-->
+            <Auxiliary>3</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic2-->
+            <AppLevel>2</AppLevel>
+            <!--holder 6-->
+            <Holder>6</Holder>
+            <!--instrument type Unused-->
+            <InstrumentType>0</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 1-->
+            <Holder>1</Holder>
+            <!--instrument type Multiflex/Turbine-->
+            <InstrumentType>7</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 2-->
+            <Holder>2</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 3-->
+            <Holder>3</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 4-->
+            <Holder>4</Holder>
+            <!--instrument type Syringe-->
+            <InstrumentType>5</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 5-->
+            <Holder>5</Holder>
+            <!--instrument type Scaler-->
+            <InstrumentType>6</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--mode P3-->
+            <Auxiliary>3</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic3-->
+            <AppLevel>3</AppLevel>
+            <!--holder 6-->
+            <Holder>6</Holder>
+            <!--instrument type Unused-->
+            <InstrumentType>0</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 1-->
+            <Holder>1</Holder>
+            <!--instrument type Multiflex/Turbine-->
+            <InstrumentType>7</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 2-->
+            <Holder>2</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 3-->
+            <Holder>3</Holder>
+            <!--instrument type E-motor-->
+            <InstrumentType>8</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 4-->
+            <Holder>4</Holder>
+            <!--instrument type Syringe-->
+            <InstrumentType>5</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 5-->
+            <Holder>5</Holder>
+            <!--instrument type Scaler-->
+            <InstrumentType>6</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--mode P3-->
+            <Auxiliary>3</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+        <Instrument>
+            <!--AppLevel Generic4-->
+            <AppLevel>4</AppLevel>
+            <!--holder 6-->
+            <Holder>6</Holder>
+            <!--instrument type Unused-->
+            <InstrumentType>0</InstrumentType>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolmode NaCl disabled, mode off (0x11)-->
+            <CoolantMode>17</CoolantMode>
+            <!--auxiliary functions-->
+            <Auxiliary>0</Auxiliary>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </Instrument>
+    </Instruments>
+    <InstrumentsSurg>
+        <InstrumentSurg>
+            <!--SURG step 1-->
+            <StepNumber>1</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 2-->
+            <StepNumber>2</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 3-->
+            <StepNumber>3</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 4-->
+            <StepNumber>4</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 5-->
+            <StepNumber>5</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 6-->
+            <StepNumber>6</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 7-->
+            <StepNumber>7</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 8-->
+            <StepNumber>8</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 9-->
+            <StepNumber>9</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+        <InstrumentSurg>
+            <!--SURG step 10-->
+            <StepNumber>10</StepNumber>
+            <!--Activity FreeOperation-->
+            <StepActivity>7</StepActivity>
+            <!--maximum power (auto)-->
+            <MaxPower>0</MaxPower>
+            <!--slider center value-->
+            <Center>128</Center>
+            <!--rotation direction clockwise-->
+            <Rotation>1</Rotation>
+            <!--coolant mode NaCl enabled, mode NaCl (0x24)-->
+            <CoolantMode>36</CoolantMode>
+            <!--transmission ratio 27:1-->
+            <Ratio>4</Ratio>
+            <!--LUX enabled, level 9 (0x91)-->
+            <Lux>145</Lux>
+        </InstrumentSurg>
+    </InstrumentsSurg>
+    <InstrumentEndo>
+        <!-- RFU -->
+    </InstrumentEndo>
+    <LedLight>
+        <!--intensity 5/5-->
+        <Intensity>4</Intensity>
+        <!--color temperature 5000K-->
+        <ColorTemperature>2</ColorTemperature>
+        <!--dim mode CompuSave-->
+        <DimMode>2</DimMode>
+        <!--dim intensity 5/5-->
+        <DimIntensity>4</DimIntensity>
+    </LedLight>
+    <SoftKeys>
+        <!--Bell-->
+        <SoftKey1>5</SoftKey1>
+        <!--lock screen-->
+        <SoftKey2>8</SoftKey2>
+        <!--light on/off-->
+        <SoftKey3>0</SoftKey3>
+        <!--light dim-->
+        <SoftKey4>1</SoftKey4>
+        <!--tumbler rinse-->
+        <SoftKey5>3</SoftKey5>
+        <!--emergency position-->
+        <SoftKey6>7</SoftKey6>
+    </SoftKeys>
+    <Timers>
+        <Timer>
+            <!--Timer 1-->
+            <TimerNumber>1</TimerNumber>
+            <!--Timer (count-down)-->
+            <Direction>2</Direction>
+            <!--interval (in 1s)-->
+            <Interval>10</Interval>
+        </Timer>
+        <Timer>
+            <!--Timer 2-->
+            <TimerNumber>2</TimerNumber>
+            <!--Timer (count-down)-->
+            <Direction>2</Direction>
+            <!--interval (in 1s)-->
+            <Interval>30</Interval>
+        </Timer>
+        <Timer>
+            <!--Timer 3-->
+            <TimerNumber>3</TimerNumber>
+            <!--Timer (count-down)-->
+            <Direction>2</Direction>
+            <!--interval (in 1s)-->
+            <Interval>60</Interval>
+        </Timer>
+        <Timer>
+            <!--Timer 4-->
+            <TimerNumber>4</TimerNumber>
+            <!--Stopwatch (count-up)-->
+            <Direction>2</Direction>
+            <!--interval (in 1s)-->
+            <Interval>0</Interval>
+        </Timer>
+        <Timer>
+            <!--Timer 5-->
+            <TimerNumber>5</TimerNumber>
+            <!--Stopwatch (count-up)-->
+            <Direction>2</Direction>
+            <!--interval (in 1s)-->
+            <Interval>0</Interval>
+        </Timer>
+    </Timers>
+    <Various>
+        <!--English (US)-->
+        <Language>9</Language>
+    </Various>
+</UserSettings>
