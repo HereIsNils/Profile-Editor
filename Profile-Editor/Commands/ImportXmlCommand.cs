@@ -15,7 +15,6 @@ namespace Profile_Editor.Commands
 {
     internal class ImportXmlCommand : ICommand
     {
-         
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
@@ -26,7 +25,6 @@ namespace Profile_Editor.Commands
         public void Execute(object? parameter)
         {
             string filepath = "";
-            UserSettings userSettings = new UserSettings();
             OpenFileDialog fd = new OpenFileDialog();
             fd.InitialDirectory = Environment.CurrentDirectory;
             fd.Filter = "xml files (*.xml)|*.xml";
@@ -40,7 +38,7 @@ namespace Profile_Editor.Commands
                     return;
                 }
             }
-            userSettings = createObj(filepath);
+            parameter = createObj(filepath);
         }
 
         public UserSettings createObj(string path)
