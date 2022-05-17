@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Profile_Editor.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Serialization;
 
 namespace Profile_Editor.Commands
 {
@@ -24,6 +26,7 @@ namespace Profile_Editor.Commands
         public void Execute(object? parameter)
         {
             string filepath = "";
+            UserSettings userSettings = new UserSettings();
             OpenFileDialog fd = new OpenFileDialog();
             fd.InitialDirectory = Environment.CurrentDirectory;
             fd.Filter = "xml files (*.xml)|*.xml";
@@ -37,10 +40,17 @@ namespace Profile_Editor.Commands
                     return;
                 }
             }
+            userSettings = createObj(filepath);
+        }
 
-            DataSet ds = new DataSet();
-            ds.ReadXml(filepath);
-            DataView bla = ds.Tables[0].DefaultView;
+        public UserSettings createObj(string path)
+        { 
+            XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                UserSettings userSettings = (UserSettings) serializer.Deserialize(fs);
+                return userSettings;
+            }
         }
     }
 }
