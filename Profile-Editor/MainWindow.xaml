@@ -45,7 +45,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="importXaml"
+            <Button x:Name="importXml"
                     Grid.Row="1"
                     Height="40px"
                     Width="40px"
@@ -53,7 +53,8 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right"
                     Margin="0 10 20 0"
-                    ToolTip="Import">
+                    ToolTip="Import"
+                    Command="{Binding ImportXmlCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/publish_icon.png"/>
                 </Button.Background>
