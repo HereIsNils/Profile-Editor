@@ -12,12 +12,14 @@
     <None Remove="add_icon.png" />
     <None Remove="publish_icon.png" />
     <None Remove="save_icon.png" />
+    <None Remove="View\lightbulb_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="add_icon.png" />
     <Resource Include="publish_icon.png" />
     <Resource Include="save_icon.png" />
+    <Resource Include="View\lightbulb_icon.png" />
   </ItemGroup>
 
 </Project>
