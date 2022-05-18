@@ -65,8 +65,7 @@
         <Grid x:Name="centerGrid" 
               Grid.Column="1"
               Width="Auto" Height="Auto"
-              VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-              >
+              VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <WrapPanel Orientation="Horizontal">
                     <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
