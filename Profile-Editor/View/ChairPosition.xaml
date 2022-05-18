@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d" 
-             d:DesignHeight="354" d:DesignWidth="420" Background="White">
+             d:DesignHeight="354" 
+             d:DesignWidth="420" 
+             Background="White" 
+             >
     <Grid Height="354" Width="420">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
