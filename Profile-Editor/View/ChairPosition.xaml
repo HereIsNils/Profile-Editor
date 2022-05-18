@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d" 
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
-    <Grid>
+    <Grid Height="354" Width="420">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
