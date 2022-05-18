@@ -20,8 +20,4 @@
     <Resource Include="save_icon.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
-
 </Project>
