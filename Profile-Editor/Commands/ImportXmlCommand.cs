@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Profile_Editor.Model;
+using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Profile_Editor.Commands
 {
     internal class ImportXmlCommand : ICommand
     {
+        public MainViewModel viewModel;
+        public ImportXmlCommand(MainViewModel viewModel)
+        {
+            this.viewModel = viewModel;
+        }
+
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
@@ -38,16 +45,16 @@ namespace Profile_Editor.Commands
                     return;
                 }
             }
-            parameter = createObj(filepath);
+            createObj(filepath);
         }
 
-        public UserSettings createObj(string path)
-        { 
+        public void createObj(string path)
+        {
             XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                UserSettings userSettings = (UserSettings) serializer.Deserialize(fs);
-                return userSettings;
+                UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
+                viewModel.UserSettings = userSettings;
             }
         }
     }

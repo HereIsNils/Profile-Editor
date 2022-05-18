@@ -13,7 +13,7 @@ namespace Profile_Editor.Model
         [XmlElement("AppLevelNames")]
         public List<AppLevelNames> AppLevelNames { get; set; }
 
-        [XmlElement("ChairPosistions")]
+        [XmlElement("ChairPositions")]
         public List<ChairPositions> ChairPositions { get; set; }
 
         [XmlElement("Instruments")]

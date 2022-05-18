@@ -11,12 +11,24 @@ namespace Profile_Editor.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
-        UserSettings userSettings = new UserSettings();
+        private UserSettings _userSettings;
+        public UserSettings UserSettings
+        {
+            get { return _userSettings; }
+            set 
+            { 
+                _userSettings = value;
+                OnPropertyChanged(nameof(UserSettings));
+            }
+        }
+
         public ICommand ImportXmlCommand { get; set; }
+
 
         public MainViewModel()
         {
-            ImportXmlCommand = new ImportXmlCommand();
+            ImportXmlCommand = new ImportXmlCommand(this);
+            UserSettings = new UserSettings();
         }
     }
 }
