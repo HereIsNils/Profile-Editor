@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:Profile_Editor.View"
         xmlns:local="clr-namespace:Profile_Editor"
         mc:Ignorable="d"
-        Title="Profile Editor" Height="768px" Width="1443px">
+        Title="Profile Editor" Height="799px" Width="1509px">
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150px"/>
@@ -68,12 +69,40 @@
               VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <WrapPanel Orientation="Horizontal">
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
-                    <Button Width="400" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"></Button>
+                    <views:ChairPosition
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:Instruments
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:InstrumentsSurg
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:LedLight
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:SoftKeys
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:Timers
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
+                    
+                    <views:Various
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"/>
                 </WrapPanel>
             </ScrollViewer>
         </Grid>
