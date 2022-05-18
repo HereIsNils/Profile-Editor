@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profile_Editor.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,22 @@ namespace Profile_Editor
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel(
+                    new CPViewModel(),
+                    new IViewModel(),
+                    new ISViewModel(),
+                    new LLViewModel(),
+                    new SKViewModel(),
+                    new TViewModel(),
+                    new VViewModel()
+)
+            };
+            MainWindow.Show();
+            base.OnStartup(e);
+        }
     }
 }

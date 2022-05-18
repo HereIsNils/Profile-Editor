@@ -24,8 +24,6 @@ namespace Profile_Editor
         public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = new MainViewModel();
         }
     }
 }

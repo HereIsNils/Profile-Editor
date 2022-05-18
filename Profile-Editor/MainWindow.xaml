@@ -72,37 +72,44 @@
                     <views:ChairPosition
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding CPViewModel}"/>
                     
                     <views:Instruments
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding IViewModel}"/>
                     
                     <views:InstrumentsSurg
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding ISViewModel}"/>
                     
                     <views:LedLight
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding LLViewModel}"/>
                     
                     <views:SoftKeys
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding SKViewModel}"/>
                     
                     <views:Timers
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding TViewModel}"/>
                     
                     <views:Various
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
-                        Margin="10"/>
+                        Margin="10"
+                        DataContext="{Binding VViewModel}"/>
                 </WrapPanel>
             </ScrollViewer>
         </Grid>

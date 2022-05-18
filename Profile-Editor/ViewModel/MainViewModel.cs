@@ -11,6 +11,14 @@ namespace Profile_Editor.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
+        public CPViewModel CPViewModel { get; }
+        public IViewModel IViewModel { get; }
+        public ISViewModel ISViewModel { get; }
+        public LLViewModel LLViewModel { get; }
+        public SKViewModel SKViewModel { get; }
+        public TViewModel TViewModel { get; }
+        public VViewModel VViewModel { get; }
+
         private UserSettings _userSettings;
         public UserSettings UserSettings
         {
@@ -25,10 +33,25 @@ namespace Profile_Editor.ViewModel
         public ICommand ImportXmlCommand { get; set; }
 
 
-        public MainViewModel()
+        public MainViewModel(
+            CPViewModel cpViewModel,
+            IViewModel iViewModel,
+            ISViewModel iSViewModel,
+            LLViewModel llViewModel,
+            SKViewModel skViewModel,
+            TViewModel tViewModel,
+            VViewModel vViewModel)
         {
             ImportXmlCommand = new ImportXmlCommand(this);
             UserSettings = new UserSettings();
+            CPViewModel = cpViewModel;
+            IViewModel = iViewModel;
+            ISViewModel = iSViewModel;
+            LLViewModel = llViewModel;
+            SKViewModel = skViewModel;
+            TViewModel = tViewModel;
+            VViewModel = vViewModel;
+
         }
     }
 }
