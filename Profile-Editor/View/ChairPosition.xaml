@@ -21,7 +21,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top" 
                    Grid.Row="0"/>
-        
+
         <Button x:Name="infoCPButton"
                 Height="25"
                 Width="25"
@@ -36,7 +36,10 @@
                   Grid.Row="1"
                   Height="25" Width="80"
                   HorizontalAlignment="Left" VerticalAlignment="Top"
-                  Margin="10 10 0 10"/>
+                  Margin="10 10 0 10"
+                  IsEditable="True"
+                  IsReadOnly="True"
+                  Text="Position"/>
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
@@ -138,7 +141,7 @@
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
                     ToolTip="{Binding ElementName=sHeadTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <Slider x:Name="sSeatTilt" 
                     Grid.Row="5" Grid.Column="1" 
                     VerticalAlignment="Center" HorizontalAlignment="Center" 
