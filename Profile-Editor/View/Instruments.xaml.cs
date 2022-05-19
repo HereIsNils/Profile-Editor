@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profile_Editor.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Profile_Editor.View
         public Instruments()
         {
             InitializeComponent();
+            DataContext = new IViewModel();
         }
     }
 }

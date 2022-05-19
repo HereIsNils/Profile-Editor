@@ -4,18 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profile_Editor.View"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
+    
     <Grid Height="354" Width="420">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
         <TextBlock Text="Instrumente" 
                    FontSize="20"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top" 
                    Grid.Row="0"/>
+        
         <Button x:Name="infoIButton"
                 Height="25"
                 Width="25"
@@ -24,6 +27,68 @@
             <Button.Background>
                 <ImageBrush ImageSource="/Profile-Editor;component/View/lightbulb_icon.png"/>
             </Button.Background>
-        </Button>       
+        </Button>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="{Binding AppLevel}" FontSize="15"
+                       Margin="10"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <ComboBox Grid.Row="0" 
+                      Margin="10"
+                      Height="25" Width="60"
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      IsEditable="True"
+                      IsReadOnly="True"
+                      Text="Halter"/>
+
+            <ComboBox Grid.Row="0" 
+                      Margin="10"
+                      Height="25" Width="150"
+                      VerticalAlignment="Center" HorizontalAlignment="Right"
+                      IsEditable="True"
+                      IsReadOnly="True"
+                      Text="Instrument Typ"/>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="2" Grid.Column="0">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Content="Aus" Grid.Column="0" Grid.Row="0" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <RadioButton Content="Luft" Grid.Column="0" Grid.Row="1" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <RadioButton Grid.Column="1" Grid.Row="0" FontSize="15" Margin="10"/>
+                    <RadioButton Content="NaCl" Grid.Column="1" Grid.Row="1" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                </Grid>
+                
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
