@@ -3,16 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:Profile_Editor.View"
+        xmlns:View="clr-namespace:Profile_Editor.View"
         xmlns:local="clr-namespace:Profile_Editor"
         mc:Ignorable="d"
         Title="Profile Editor" Height="799px" Width="1509px">
+    
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150px"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <!-- Left grid which lists all app levels and contains the buttons for import and save -->
         <Grid x:Name="leftMenuGrid" 
               Grid.Column="0">
             <Grid.RowDefinitions>
@@ -63,49 +65,52 @@
             </Button>
 
         </Grid>
+        
+        <!-- Center grid with all modules in a wrap panel -->
         <Grid x:Name="centerGrid" 
               Grid.Column="1"
               Width="Auto" Height="Auto"
               VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <WrapPanel Orientation="Horizontal">
-                    <views:ChairPosition
+                    <View:ChairPosition
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
-                        DataContext="{Binding CPViewModel}"/>
-                    
-                    <views:Instruments
+                        DataContext="{Binding CPViewModel}">
+                    </View:ChairPosition>
+
+                    <View:Instruments
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding IViewModel}"/>
-                    
-                    <views:InstrumentsSurg
+
+                    <View:InstrumentsSurg
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding ISViewModel}"/>
-                    
-                    <views:LedLight
+
+                    <View:LedLight
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding LLViewModel}"/>
-                    
-                    <views:SoftKeys
+
+                    <View:SoftKeys
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding SKViewModel}"/>
-                    
-                    <views:Timers
+
+                    <View:Timers
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding TViewModel}"/>
-                    
-                    <views:Various
+
+                    <View:Various
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
