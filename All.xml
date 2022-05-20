@@ -110,7 +110,7 @@
             <Holder>1</Holder>
             <!--instrument type Multiflex/Turbine-->
             <InstrumentType>7</InstrumentType>
-            <!--slider center value-->
+            <!--slider center value 1 Byte long, max: 255-->
             <Center>128</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>

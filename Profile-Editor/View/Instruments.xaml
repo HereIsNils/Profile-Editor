@@ -6,19 +6,19 @@
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d"
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
-    
+
     <Grid Height="354" Width="420">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock Text="Instrumente" 
                    FontSize="20"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top" 
                    Grid.Row="0"/>
-        
+
         <Button x:Name="infoIButton"
                 Height="25"
                 Width="25"
@@ -59,7 +59,7 @@
                     Grid.Row="1"
                     VerticalAlignment="Center" HorizontalAlignment="Center"
                     Width="290" Margin="110 0 0 0"
-                    Maximum="100" Minimum="0"
+                    Maximum="255" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
                     ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
@@ -80,7 +80,7 @@
                        Grid.Row="2" 
                        VerticalAlignment="Center" HorizontalAlignment="Right" 
                        Margin="0 0 50 0"/>
-            
+
             <TextBox x:Name="tbAux"
                      Grid.Row="2"
                      Width="30" Height="30"
@@ -104,7 +104,7 @@
                           Grid.Column="0" Grid.Row="0" 
                           HorizontalAlignment="Left" VerticalAlignment="Center"
                           Margin="10"/>
-                
+
                 <CheckBox x:Name="cbLux" 
                           Content="Helligkeit" FontSize="15" 
                           Grid.Column="1" Grid.Row="0" 
@@ -114,13 +114,13 @@
                 <TextBlock Text="Level:" FontSize="15"
                            Grid.Column="1" Grid.Row="1"
                            VerticalAlignment="Center" HorizontalAlignment="Left"
-                           Margin="10"/>
+                           Margin="53,0,0,0"/>
 
                 <Slider x:Name="sLux" 
                     Grid.Row="1" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Left"
-                    Width="150" Margin="55 0 0 0"
-                    Maximum="100" Minimum="0"
+                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Width="100" Margin="0 0 10 0"
+                    Maximum="9" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
                     ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
@@ -132,7 +132,7 @@
                           Margin="10"/>
 
                 <Grid Grid.Row="2" Grid.Column="0">
-                    
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -146,19 +146,19 @@
                                  Grid.Column="0" Grid.Row="0" 
                                  Margin="10" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    
+
                     <RadioButton Content="NaCl" FontSize="15"
                                  Grid.Column="1" Grid.Row="0"
                                   Margin="10" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    
+
                     <RadioButton Content="Luft und Wasser" FontSize="15"
                                  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  
                                  Margin="10 0 0 0" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
                 </Grid>
-                
+
             </Grid>
         </Grid>
     </Grid>
