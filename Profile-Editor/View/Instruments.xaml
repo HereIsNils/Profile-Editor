@@ -44,6 +44,7 @@
 
             <ComboBox Grid.Row="0" 
                       Margin="10"
+                      FontSize="15"
                       Height="25" Width="150"
                       VerticalAlignment="Center" HorizontalAlignment="Right"
                       IsEditable="True"
@@ -69,24 +70,35 @@
                        VerticalAlignment="Center" HorizontalAlignment="Left" 
                        Margin="10"/>
 
-            <TextBox x:Name="tbRotation"
+            <ComboBox x:Name="cbRotation"
                      Grid.Row="2"
-                     Width="30" Height="30"
                      FontSize="15"
+                     Width="160"
                      VerticalAlignment="Center" HorizontalAlignment="Left"
-                     Margin="80 0 0 0"/>
+                     Margin="80 0 0 0"
+                     IsEditable="True"
+                     IsReadOnly="True"
+                     Text="Gegen den Uhrzeigersinn">
+                <ComboBoxItem Tag="cw" Content="Im Uhrzeigersinn"/>
+                <ComboBoxItem Tag="ccw" Content="Gegen den Uhrzeigersinn"/>
+            </ComboBox>
 
             <TextBlock Text="Beschleunigung:" FontSize="15" 
                        Grid.Row="2" 
                        VerticalAlignment="Center" HorizontalAlignment="Right" 
                        Margin="0 0 50 0"/>
 
-            <TextBox x:Name="tbAux"
+            <ComboBox x:Name="tbAux"
                      Grid.Row="2"
-                     Width="30" Height="30"
+                     Width="30"
                      FontSize="15"
                      VerticalAlignment="Center" HorizontalAlignment="Right"
-                     Margin="0 0 10 0"/>
+                     Margin="0 0 10 0"
+                     IsEditable="True"
+                     IsReadOnly="True"
+                     Text="1">
+                
+            </ComboBox>
 
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
