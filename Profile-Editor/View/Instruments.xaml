@@ -58,6 +58,44 @@
                       IsReadOnly="True"
                       Text="Instrument Typ"/>
 
+            <TextBlock Text="Fußpedalmitte:" FontSize="15"
+                       Grid.Row="1"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="10"/>
+
+            <Slider x:Name="sCenter" 
+                    Grid.Row="1"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Width="290" Margin="110 0 0 0"
+                    Maximum="100" Minimum="0"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Rotation:" FontSize="15" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10"/>
+
+            <TextBox x:Name="tbRotation"
+                     Grid.Row="2"
+                     Width="30" Height="30"
+                     FontSize="15"
+                     VerticalAlignment="Center" HorizontalAlignment="Left"
+                     Margin="80 0 0 0"/>
+
+            <TextBlock Text="Beschleunigung:" FontSize="15" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Center" HorizontalAlignment="Right" 
+                       Margin="0 0 50 0"/>
+            
+            <TextBox x:Name="tbAux"
+                     Grid.Row="2"
+                     Width="30" Height="30"
+                     FontSize="15"
+                     VerticalAlignment="Center" HorizontalAlignment="Right"
+                     Margin="0 0 10 0"/>
+
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -69,6 +107,37 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
+                <CheckBox x:Name="cbCoolant" 
+                          Content="Kühlung" FontSize="15" 
+                          Grid.Column="0" Grid.Row="0" 
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Margin="10"/>
+                
+                <CheckBox x:Name="cbLux" 
+                          Content="Helligkeit" FontSize="15" 
+                          Grid.Column="1" Grid.Row="0" 
+                          HorizontalAlignment="Right" VerticalAlignment="Center"
+                          Margin="0 0 75 0"/>
+
+                <TextBlock Text="Level:" FontSize="15"
+                           Grid.Column="1" Grid.Row="1"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10"/>
+
+                <Slider x:Name="sLux" 
+                    Grid.Row="1" Grid.Column="1"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Width="150" Margin="55 0 0 0"
+                    Maximum="100" Minimum="0"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <CheckBox x:Name="cbNacl"
+                          Content="NaCl aktiv" FontSize="15"
+                          Grid.Row="1" Grid.Column="0"
+                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                          Margin="10"/>
 
                 <Grid Grid.Row="2" Grid.Column="0">
                     
@@ -81,10 +150,20 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <RadioButton Content="Aus" Grid.Column="0" Grid.Row="0" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <RadioButton Content="Luft" Grid.Column="0" Grid.Row="1" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <RadioButton Grid.Column="1" Grid.Row="0" FontSize="15" Margin="10"/>
-                    <RadioButton Content="NaCl" Grid.Column="1" Grid.Row="1" FontSize="15" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <RadioButton Content="Luft" FontSize="15" 
+                                 Grid.Column="0" Grid.Row="0" 
+                                 Margin="10" 
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    
+                    <RadioButton Content="NaCl" FontSize="15"
+                                 Grid.Column="1" Grid.Row="0"
+                                  Margin="10" 
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    
+                    <RadioButton Content="Luft und Wasser" FontSize="15"
+                                 Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  
+                                 Margin="10 0 0 0" 
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
                 </Grid>
                 
