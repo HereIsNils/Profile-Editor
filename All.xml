@@ -124,7 +124,7 @@
         <Instrument>
             <!--AppLevel Generic1-->
             <AppLevel>1</AppLevel>
-            <!--holder 2-->
+            <!--holder 2 not configureable-->
             <Holder>2</Holder>
             <!--instrument type E-motor-->
             <InstrumentType>8</InstrumentType>

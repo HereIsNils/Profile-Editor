@@ -86,11 +86,13 @@
                         Margin="10"
                         DataContext="{Binding IViewModel}"/>
 
+                    <!-- Currently not used by TU
                     <View:InstrumentsSurg
                         BorderBrush="#FF656565" 
                         BorderThickness="1"
                         Margin="10"
-                        DataContext="{Binding ISViewModel}"/>
+                        DataContext="{Binding ISViewModel}"/> 
+                    -->
 
                     <View:LedLight
                         BorderBrush="#FF656565" 
