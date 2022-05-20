@@ -44,14 +44,6 @@
 
             <ComboBox Grid.Row="0" 
                       Margin="10"
-                      Height="25" Width="60"
-                      VerticalAlignment="Center" HorizontalAlignment="Center"
-                      IsEditable="True"
-                      IsReadOnly="True"
-                      Text="Halter"/>
-
-            <ComboBox Grid.Row="0" 
-                      Margin="10"
                       Height="25" Width="150"
                       VerticalAlignment="Center" HorizontalAlignment="Right"
                       IsEditable="True"
