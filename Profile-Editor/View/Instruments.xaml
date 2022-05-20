@@ -63,7 +63,7 @@
                     Maximum="255" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sCenter, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Rotation:" FontSize="15" 
                        Grid.Row="2" 
@@ -135,7 +135,7 @@
                     Maximum="9" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sLux, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <CheckBox x:Name="cbNacl"
                           Content="NaCl aktiv" FontSize="15"
