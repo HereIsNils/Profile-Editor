@@ -25,5 +25,28 @@
                 <ImageBrush ImageSource="/Profile-Editor;component/View/lightbulb_icon.png"/>
             </Button.Background>
         </Button>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Sprache:" FontSize="15" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10 0 0 0"
+                       Grid.Row="0"/>
+
+            <ComboBox x:Name="cbLanguage"
+                      FontSize="15"
+                      Width="105"
+                      VerticalAlignment="Center" HorizontalAlignment="Left"
+                      IsEditable="True"
+                      IsReadOnly="True"
+                      Text="Deutsch"
+                      Margin="75 0 0 0"/>
+        </Grid>
     </Grid>
 </UserControl>
