@@ -11,6 +11,7 @@ namespace Profile_Editor.ViewModel
     internal class CPViewModel : BaseViewModel
     {
         public ICommand CBPositionsChangedCommand { get; set; }
+        public ICommand SChairHeightChangedCommand { get; set; }
 
         public CPViewModel()
         {
