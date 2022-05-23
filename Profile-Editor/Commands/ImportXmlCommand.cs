@@ -40,10 +40,14 @@ namespace Profile_Editor.Commands
             if (fd.ShowDialog() == true)
             {
                 filepath = fd.FileName;
-                if (string.IsNullOrEmpty(filepath))
+                if (filepath == "")
                 {
                     return;
                 }
+            } else
+            {
+                // return if explorer gets closed or cancel gets selected
+                return;
             }
             createObj(filepath);
         }
