@@ -99,7 +99,7 @@
 
             <Slider x:Name="sChairHeight" 
                     Grid.Row="0" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -108,7 +108,7 @@
             
             <Slider x:Name="sBackHeight" 
                     Grid.Row="1" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -117,7 +117,7 @@
             
             <Slider x:Name="sSeatCorrection" 
                     Grid.Row="2" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -126,7 +126,7 @@
             
             <Slider x:Name="sHeadHeight" 
                     Grid.Row="3" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -135,7 +135,7 @@
             
             <Slider x:Name="sHeadTilt" 
                     Grid.Row="4" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -144,7 +144,7 @@
 
             <Slider x:Name="sSeatTilt" 
                     Grid.Row="5" Grid.Column="1" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
