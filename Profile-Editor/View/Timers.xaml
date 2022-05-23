@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profile_Editor.View"
+             xmlns:adorners="http://gu.se/Adorners"
              mc:Ignorable="d" 
             d:DesignHeight="354" d:DesignWidth="420" Background="White">
     <Grid Height="354" Width="420">
@@ -25,5 +26,190 @@
                 <ImageBrush ImageSource="/Profile-Editor;component/View/lightbulb_icon.png"/>
             </Button.Background>
         </Button>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region row 1-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <ToggleButton x:Name="tbtnTimer1" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Width="30" Height="30"  
+                              Margin="10 0 0 0"
+                              Grid.Column="0" Grid.Row="0">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
+
+                <TextBox x:Name="tbTimer1M" 
+                         Width="60" Height="30"
+                         Grid.Column="1" Grid.Row="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                
+                <TextBox x:Name="tbTimer1S" 
+                         Width="60" Height="30"
+                         Grid.Column="2" Grid.Row="0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Margin="10 0 0 0"  
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+            </Grid>
+            <!--#endregion row 1-->
+            
+            <!--#region row 2-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton x:Name="tbtnTimer2" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Width="30" Height="30"  
+                              Margin="10 0 0 0"
+                              Grid.Column="0" Grid.Row="0">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
+
+                <TextBox x:Name="tbTimer2M" 
+                         Width="60" Height="30"
+                         Grid.Column="1" Grid.Row="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+
+                <TextBox x:Name="tbTimer2S" 
+                         Width="60" Height="30"
+                         Grid.Column="2" Grid.Row="0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Margin="10 0 0 0"  
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+            </Grid>
+            <!--#endregion row 2-->
+
+            <!--#region row 3-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton x:Name="tbtnTimer3" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Width="30" Height="30"  
+                              Margin="10 0 0 0"
+                              Grid.Column="0" Grid.Row="0">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
+
+                <TextBox x:Name="tbTimer3M" 
+                         Width="60" Height="30"
+                         Grid.Column="1" Grid.Row="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+
+                <TextBox x:Name="tbTimer3S" 
+                         Width="60" Height="30"
+                         Grid.Column="2" Grid.Row="0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Margin="10 0 0 0"  
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+            </Grid>
+            <!--#endregion row 3-->
+
+            <!--#region row 4-->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton x:Name="tbtnTimer4" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Width="30" Height="30"  
+                              Margin="10 0 0 0"
+                              Grid.Column="0" Grid.Row="0">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
+
+                <TextBox x:Name="tbTimer4M" 
+                         Width="60" Height="30"
+                         Grid.Column="1" Grid.Row="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+
+                <TextBox x:Name="tbTimer4S" 
+                         Width="60" Height="30"
+                         Grid.Column="2" Grid.Row="0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Margin="10 0 0 0"  
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+            </Grid>
+            <!--#endregion row 4-->
+
+            <!--#region row 5-->
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton x:Name="tbtnTimer5" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Width="30" Height="30"  
+                              Margin="10 0 0 0"
+                              Grid.Column="0" Grid.Row="0">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
+
+                <TextBox x:Name="tbTimer5M" 
+                         Width="60" Height="30"
+                         Grid.Column="1" Grid.Row="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+
+                <TextBox x:Name="tbTimer5S" 
+                         Width="60" Height="30"
+                         Grid.Column="2" Grid.Row="0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Margin="10 0 0 0"  
+                         FontSize="15" FontStyle="Normal" 
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+            </Grid>
+            <!--#endregion row 5-->
+        </Grid>
     </Grid>
 </UserControl>

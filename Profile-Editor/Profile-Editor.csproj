@@ -13,7 +13,12 @@
     <None Remove="publish_icon.png" />
     <None Remove="save_icon.png" />
     <None Remove="View\add_icon.png" />
+    <None Remove="View\icons-32-db-32__stopwatch_db.png" />
     <None Remove="View\lightbulb_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Gu.Wpf.Adorners" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +26,7 @@
     <Resource Include="publish_icon.png" />
     <Resource Include="save_icon.png" />
     <Resource Include="View\add_icon.png" />
+    <Resource Include="View\icons-32-db-32__stopwatch_db.png" />
     <Resource Include="View\lightbulb_icon.png" />
   </ItemGroup>
 
