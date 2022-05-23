@@ -6,7 +6,7 @@
         xmlns:View="clr-namespace:Profile_Editor.View"
         xmlns:local="clr-namespace:Profile_Editor"
         mc:Ignorable="d"
-        Title="Profile Editor" Height="799px" Width="1509px">
+        Title="Profil Editor" Height="799px" Width="1509px">
     
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
