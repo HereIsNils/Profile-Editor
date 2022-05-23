@@ -16,17 +16,18 @@ namespace Profile_Editor
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow = new MainWindow()
-            {
-                DataContext = new MainViewModel(
-                    new CPViewModel(),
+            CPViewModel cpViewModel = new CPViewModel();
+            MainViewModel mainViewModel = new MainViewModel(cpViewModel,
                     new IViewModel(),
                     new ISViewModel(),
                     new LLViewModel(),
                     new SKViewModel(),
                     new TViewModel(),
-                    new VViewModel()
-)
+                    new VViewModel());
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = mainViewModel
             };
             MainWindow.Show();
             base.OnStartup(e);

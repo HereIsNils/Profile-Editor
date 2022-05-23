@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profile_Editor.View"
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="354" 
              d:DesignWidth="420" 
@@ -32,14 +33,26 @@
             </Button.Background>
         </Button>
 
-        <ComboBox x:Name="CBPositions"
+        <ComboBox x:Name="cbPositions"
                   Grid.Row="1"
                   Width="80"
                   HorizontalAlignment="Left" VerticalAlignment="Top"
                   Margin="10 10 0 10"
                   IsEditable="True"
                   IsReadOnly="True"
-                  Text="Position" FontSize="15"/>
+                  Text="Position" FontSize="15">
+            <Behaviors:Interaction.Triggers>
+                <Behaviors:EventTrigger EventName="SelectionChanged">
+                    <Behaviors:InvokeCommandAction Command="{Binding CBPositionsChangedCommand}" CommandParameter="{Binding ElementName=cbPositions, Path=SelectedItem}" />
+                </Behaviors:EventTrigger>
+            </Behaviors:Interaction.Triggers>
+            
+            <ComboBoxItem Tag="5" Content="LP"/>
+            <ComboBoxItem Tag="4" Content="SP"/>
+            <ComboBoxItem Tag="1" Content="AP0"/>
+            <ComboBoxItem Tag="2" Content="AP1"/>
+            <ComboBoxItem Tag="3" Content="AP2"/>
+        </ComboBox>
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
