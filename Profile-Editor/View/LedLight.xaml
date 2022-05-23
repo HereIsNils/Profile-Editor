@@ -34,18 +34,33 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Farbtemperatur:" FontSize="15" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-            <TextBlock Text="Intensität:" FontSize="15" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-            <TextBlock Text="Dimm-Modus:" FontSize="15" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-            <TextBlock Text="Dimm-Intensität:" FontSize="15" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
+            <TextBlock Text="Farbtemperatur:" FontSize="15" 
+                       Grid.Row="0" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10 0 0 0"/>
+            
+            <TextBlock Text="Intensität:" FontSize="15" 
+                       Grid.Row="1" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10 0 0 0"/>
+            
+            <TextBlock Text="Dimm-Modus:" FontSize="15" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10 0 0 0"/>
+            
+            <TextBlock Text="Dimm-Intensität:" FontSize="15" 
+                       Grid.Row="3" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       Margin="10 0 0 0"/>
 
             <Slider x:Name="sColorTemp" 
                     Grid.Row="0" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -54,7 +69,7 @@
 
             <Slider x:Name="sIntensity" 
                     Grid.Row="1" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="5" Minimum="1"
                     TickFrequency="1"
@@ -63,7 +78,7 @@
 
             <Slider x:Name="sDimMode" 
                     Grid.Row="2" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
@@ -72,7 +87,7 @@
 
             <Slider x:Name="sDimIntensity" 
                     Grid.Row="3" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="5" Minimum="1"
                     TickFrequency="1"
