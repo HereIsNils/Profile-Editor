@@ -34,12 +34,12 @@
 
         <ComboBox x:Name="CBPositions"
                   Grid.Row="1"
-                  Height="25" Width="80"
+                  Width="80"
                   HorizontalAlignment="Left" VerticalAlignment="Top"
                   Margin="10 10 0 10"
                   IsEditable="True"
                   IsReadOnly="True"
-                  Text="Position"/>
+                  Text="Position" FontSize="15"/>
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
