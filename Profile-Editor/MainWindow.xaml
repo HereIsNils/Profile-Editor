@@ -80,12 +80,6 @@
                         DataContext="{Binding CPViewModel}">
                     </View:ChairPosition>
 
-                    <View:Instruments
-                        BorderBrush="#FF656565" 
-                        BorderThickness="1"
-                        Margin="10"
-                        DataContext="{Binding IViewModel}"/>
-
                     <!-- Currently not used by TU
                     <View:InstrumentsSurg
                         BorderBrush="#FF656565" 
@@ -111,6 +105,12 @@
                         BorderThickness="1"
                         Margin="10"
                         DataContext="{Binding TViewModel}"/>
+
+                    <View:Instruments
+                        BorderBrush="#FF656565" 
+                        BorderThickness="1"
+                        Margin="10"
+                        DataContext="{Binding IViewModel}"/>
 
                     <View:Various
                         BorderBrush="#FF656565" 
