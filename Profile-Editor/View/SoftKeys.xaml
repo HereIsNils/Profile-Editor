@@ -66,12 +66,47 @@
                        VerticalAlignment="Center" HorizontalAlignment="Left" 
                        Margin="10"/>
 
-            <ComboBox x:Name="cbSoftBtn1" FontSize="15" Width="160" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            <ComboBox x:Name="cbSoftBtn2" FontSize="15" Width="160" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            <ComboBox x:Name="cbSoftBtn3" FontSize="15" Width="160" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            <ComboBox x:Name="cbSoftBtn4" FontSize="15" Width="160" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            <ComboBox x:Name="cbSoftBtn5" FontSize="15" Width="160" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            <ComboBox x:Name="cbSoftBtn6" FontSize="15" Width="160" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75 0 0 0" IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            <ComboBox x:Name="cbSoftBtn1" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="0" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            
+            <ComboBox x:Name="cbSoftBtn2" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="1" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            
+            <ComboBox x:Name="cbSoftBtn3" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="2" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            
+            <ComboBox x:Name="cbSoftBtn4" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="3" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            
+            <ComboBox x:Name="cbSoftBtn5" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="4" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+            
+            <ComboBox x:Name="cbSoftBtn6" FontSize="15" 
+                      Width="160" 
+                      Grid.Row="5" 
+                      VerticalAlignment="Center" HorizontalAlignment="Left" 
+                      Margin="75 0 0 0" 
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
         </Grid>
 
     </Grid>
