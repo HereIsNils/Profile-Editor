@@ -117,8 +117,14 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sChairHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-            
+                    ToolTip="{Binding ElementName=sChairHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding ChairHeightCommand}" CommandParameter="{Binding ElementName=sChairHeight, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
+
             <Slider x:Name="sBackHeight" 
                     Grid.Row="1" Grid.Column="1" 
                     VerticalAlignment="Center" HorizontalAlignment="Left" 
@@ -126,8 +132,14 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sBackHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-            
+                    ToolTip="{Binding ElementName=sBackHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding BackHeightCommand}" CommandParameter="{Binding ElementName=sBackHeight, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
+
             <Slider x:Name="sSeatCorrection" 
                     Grid.Row="2" Grid.Column="1" 
                     VerticalAlignment="Center" HorizontalAlignment="Left" 
@@ -135,8 +147,14 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sSeatCorrection, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-            
+                    ToolTip="{Binding ElementName=sSeatCorrection, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding SeatCorrectionCommand}" CommandParameter="{Binding ElementName=sSeatCorrection, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
+
             <Slider x:Name="sHeadHeight" 
                     Grid.Row="3" Grid.Column="1" 
                     VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -144,8 +162,14 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-            
+                    ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestHeightCommand}" CommandParameter="{Binding ElementName=sHeadHeight, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
+
             <Slider x:Name="sHeadTilt" 
                     Grid.Row="4" Grid.Column="1" 
                     VerticalAlignment="Center" HorizontalAlignment="Left" 
@@ -153,7 +177,13 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sHeadTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sHeadTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestTiltCommand}" CommandParameter="{Binding ElementName=sHeadTilt, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
 
             <Slider x:Name="sSeatTilt" 
                     Grid.Row="5" Grid.Column="1" 
@@ -162,7 +192,13 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sSeatTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sSeatTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding SeatTiltCommand}" CommandParameter="{Binding ElementName=sSeatTilt, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
 
         </Grid>
     </Grid>
