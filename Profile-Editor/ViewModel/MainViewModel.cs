@@ -1,5 +1,6 @@
 ﻿using Profile_Editor.Commands;
 using Profile_Editor.Model;
+using Profile_Editor.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Profile_Editor.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
+        private readonly UserSettingsStore _userSettingsStore;
         public CPViewModel CPViewModel { get; }
         public IViewModel IViewModel { get; }
         public ISViewModel ISViewModel { get; }
@@ -18,17 +20,6 @@ namespace Profile_Editor.ViewModel
         public SKViewModel SKViewModel { get; }
         public TViewModel TViewModel { get; }
         public VViewModel VViewModel { get; }
-
-        private UserSettings _userSettings;
-        public UserSettings UserSettings
-        {
-            get { return _userSettings; }
-            set 
-            { 
-                _userSettings = value;
-                OnPropertyChanged(nameof(UserSettings));
-            }
-        }
 
         public ICommand ImportXmlCommand { get; set; }
 
@@ -40,10 +31,11 @@ namespace Profile_Editor.ViewModel
             LLViewModel llViewModel,
             SKViewModel skViewModel,
             TViewModel tViewModel,
-            VViewModel vViewModel)
+            VViewModel vViewModel,
+            UserSettingsStore userSettingsStore)
         {
-            ImportXmlCommand = new ImportXmlCommand(this);
-            UserSettings = new UserSettings();
+            ImportXmlCommand = new ImportXmlCommand(userSettingsStore);
+            _userSettingsStore = userSettingsStore;
             CPViewModel = cpViewModel;
             IViewModel = iViewModel;
             ISViewModel = iSViewModel;
@@ -52,6 +44,6 @@ namespace Profile_Editor.ViewModel
             TViewModel = tViewModel;
             VViewModel = vViewModel;
 
-        }
+        }   
     }
 }
