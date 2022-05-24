@@ -137,7 +137,7 @@ namespace Profile_Editor.Model
         public string Axis3 { get; set; }
 
         [XmlElement("Axis4")]
-        public string Axi41 { get; set; }
+        public string Axis4 { get; set; }
 
         [XmlElement("Axis5")]
         public string Axis5 { get; set; }
