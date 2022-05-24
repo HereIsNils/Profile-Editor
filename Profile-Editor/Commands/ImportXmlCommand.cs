@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Profile_Editor.Model;
+using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,10 @@ namespace Profile_Editor.Commands
 {
     internal class ImportXmlCommand : ICommand
     {
-        public MainViewModel viewModel;
-        public ImportXmlCommand(MainViewModel viewModel)
+        private readonly UserSettingsStore _userSettingsStore;
+        public ImportXmlCommand(UserSettingsStore userSettingsStore)
         {
-            this.viewModel = viewModel;
+            _userSettingsStore = userSettingsStore;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -54,11 +55,15 @@ namespace Profile_Editor.Commands
 
         public void createObj(string path)
         {
+            
             XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
+                if (fs == null | serializer == null) return;
                 UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
-                viewModel.UserSettings = userSettings;
+
+                if(userSettings == null) return;
+                _userSettingsStore.CreateUserSettings(userSettings);
             }
         }
     }
