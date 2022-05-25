@@ -1,9 +1,5 @@
 ﻿using Profile_Editor.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Profile_Editor.Stores
 {
@@ -22,8 +18,9 @@ namespace Profile_Editor.Stores
 
         public void CreateUserSettings(UserSettings settings)
         {
-            if(settings == null) return;
+            if (settings == null) return;
             _userSettings = settings;
+            UserSettingsCreated?.Invoke(settings);
         }
     }
 }

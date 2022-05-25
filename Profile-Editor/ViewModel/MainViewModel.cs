@@ -1,11 +1,5 @@
 ﻿using Profile_Editor.Commands;
-using Profile_Editor.Model;
 using Profile_Editor.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Profile_Editor.ViewModel
@@ -44,6 +38,6 @@ namespace Profile_Editor.ViewModel
             TViewModel = tViewModel;
             VViewModel = vViewModel;
 
-        }   
+        }
     }
 }

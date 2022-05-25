@@ -43,15 +43,15 @@
                   Text="Position" FontSize="15">
             <Behaviors:Interaction.Triggers>
                 <Behaviors:EventTrigger EventName="SelectionChanged">
-                    <Behaviors:InvokeCommandAction Command="{Binding CBPositionsChangedCommand}" CommandParameter="{Binding ElementName=cbPositions, Path=SelectedItem}" />
+                    <Behaviors:InvokeCommandAction Command="{Binding CBPositionsChangedCommand}" CommandParameter="{Binding ElementName=cbPositions, Path=SelectedItem.Tag}" />
                 </Behaviors:EventTrigger>
             </Behaviors:Interaction.Triggers>
             
-            <ComboBoxItem Tag="1" Content="AP0"/>
-            <ComboBoxItem Tag="2" Content="AP1"/>
-            <ComboBoxItem Tag="3" Content="AP2"/>
-            <ComboBoxItem Tag="4" Content="SP"/>
-            <ComboBoxItem Tag="5" Content="LP"/>
+            <ComboBoxItem Tag="0" Content="AP0"/>
+            <ComboBoxItem Tag="1" Content="AP1"/>
+            <ComboBoxItem Tag="2" Content="AP2"/>
+            <ComboBoxItem Tag="3" Content="SP"/>
+            <ComboBoxItem Tag="4" Content="LP"/>
         </ComboBox>
 
         <Grid Grid.Row="2">
@@ -117,6 +117,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis1}"
                     ToolTip="{Binding ElementName=sChairHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
@@ -132,6 +133,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis2}"
                     ToolTip="{Binding ElementName=sBackHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
@@ -147,6 +149,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis3}"
                     ToolTip="{Binding ElementName=sSeatCorrection, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
@@ -162,6 +165,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis4}"
                     ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
@@ -177,6 +181,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis5}"
                     ToolTip="{Binding ElementName=sHeadTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
@@ -192,6 +197,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
+                    Value="{Binding Axis6}"
                     ToolTip="{Binding ElementName=sSeatTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
