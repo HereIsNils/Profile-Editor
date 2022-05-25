@@ -1,4 +1,5 @@
-﻿using Profile_Editor.Stores;
+﻿using Profile_Editor.Model;
+using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System.Windows;
 
@@ -9,17 +10,19 @@ namespace Profile_Editor
     /// </summary>
     public partial class App : Application
     {
-        private readonly UserSettingsStore _userSettingsStore = new UserSettingsStore();
+        private readonly UserSettingsStore _userSettingsStore;
+        private UserSettings _userSettings = new UserSettings();
 
         public App()
         {
-            _userSettingsStore = new UserSettingsStore();
+            _userSettings = new UserSettings();
+            _userSettingsStore = new UserSettingsStore(_userSettings);
         }
         protected override void OnStartup(StartupEventArgs e)
         {
 
 
-            CPViewModel cpViewModel = new CPViewModel(_userSettingsStore);
+            CPViewModel cpViewModel = new CPViewModel(_userSettingsStore, _userSettings);
             IViewModel iViewModel = new IViewModel();
             ISViewModel isViewModel = new ISViewModel();
             LLViewModel llViewModel = new LLViewModel();

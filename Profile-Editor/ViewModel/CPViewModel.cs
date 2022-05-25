@@ -29,6 +29,8 @@ namespace Profile_Editor.ViewModel
             }
         }
 
+        public UserSettings userSettings { get; set; }
+
         #region sliders
         private double _Axis1;
         public double Axis1
@@ -92,7 +94,7 @@ namespace Profile_Editor.ViewModel
         }
         #endregion sliders
 
-        public CPViewModel(UserSettingsStore userSettingsStore)
+        public CPViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             CBPositionsChangedCommand = new CBPositionsChangedCommand(this, userSettingsStore);
             ChairHeightCommand = new ChairHeightCommand(userSettingsStore);
@@ -102,6 +104,7 @@ namespace Profile_Editor.ViewModel
             SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore);
             SeatTiltCommand = new SeatTiltCommand(userSettingsStore);
 
+            this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
             _userSettingsStore.UserSettingsCreated += UpdateSettings;
 
@@ -116,7 +119,7 @@ namespace Profile_Editor.ViewModel
 
         private void UpdateSettings(UserSettings settings)
         {
-
+            CPViewModel vm = new CPViewModel(_userSettingsStore, settings);
         }
 
         private void UpdateSliders(int i)

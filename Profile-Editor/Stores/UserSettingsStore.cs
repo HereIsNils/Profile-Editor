@@ -10,10 +10,10 @@ namespace Profile_Editor.Stores
 
         public event Action<UserSettings> UserSettingsCreated;
 
-        public UserSettingsStore()
+        public UserSettingsStore(UserSettings settings)
         {
 
-            _userSettings = new UserSettings();
+            _userSettings = settings;
         }
 
         public void CreateUserSettings(UserSettings settings)
