@@ -47,11 +47,11 @@
                 </Behaviors:EventTrigger>
             </Behaviors:Interaction.Triggers>
             
-            <ComboBoxItem Tag="5" Content="LP"/>
-            <ComboBoxItem Tag="4" Content="SP"/>
             <ComboBoxItem Tag="1" Content="AP0"/>
             <ComboBoxItem Tag="2" Content="AP1"/>
             <ComboBoxItem Tag="3" Content="AP2"/>
+            <ComboBoxItem Tag="4" Content="SP"/>
+            <ComboBoxItem Tag="5" Content="LP"/>
         </ComboBox>
 
         <Grid Grid.Row="2">
