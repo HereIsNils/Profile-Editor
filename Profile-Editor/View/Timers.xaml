@@ -67,7 +67,8 @@
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Margin="10 0 0 0"  
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Sek1}"/>
             </Grid>
             <!--#endregion row 1-->
             
