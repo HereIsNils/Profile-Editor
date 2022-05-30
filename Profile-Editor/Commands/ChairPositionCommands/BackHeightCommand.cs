@@ -13,10 +13,12 @@ namespace Profile_Editor.Commands
         private UserSettingsStore userSettingsStore { get; }
 
         public event EventHandler? CanExecuteChanged;
+        private int i;
 
-        public BackHeightCommand(UserSettingsStore userSettingsStore)
+        public BackHeightCommand(UserSettingsStore userSettingsStore, int i)
         {
             this.userSettingsStore = userSettingsStore;
+            this.i = i;
         }
 
         public bool CanExecute(object? parameter)
@@ -26,7 +28,7 @@ namespace Profile_Editor.Commands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[0].Axis2 = parameter.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis2 = parameter.ToString();
         }
     }
 }

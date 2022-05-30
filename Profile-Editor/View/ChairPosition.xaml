@@ -40,7 +40,8 @@
                   Margin="10 10 0 10"
                   IsEditable="True"
                   IsReadOnly="True"
-                  Text="Position" FontSize="15">
+                  Text="Position" FontSize="15"
+                  SelectedIndex="{Binding Position, Mode=TwoWay}">
             <Behaviors:Interaction.Triggers>
                 <Behaviors:EventTrigger EventName="SelectionChanged">
                     <Behaviors:InvokeCommandAction Command="{Binding CBPositionsChangedCommand}" CommandParameter="{Binding ElementName=cbPositions, Path=SelectedItem.Tag}" />

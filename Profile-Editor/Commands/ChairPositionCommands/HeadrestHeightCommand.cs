@@ -11,10 +11,12 @@ namespace Profile_Editor.Commands.ChairPositionCommands
     internal class HeadrestHeightCommand : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
+        private int i;
 
-        public HeadrestHeightCommand(UserSettingsStore userSettingsStore)
+        public HeadrestHeightCommand(UserSettingsStore userSettingsStore, int i)
         {
             this.userSettingsStore = userSettingsStore;
+            this.i = i;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -26,7 +28,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[0].Axis4 = parameter.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis4 = parameter.ToString();
         }
     }
 }

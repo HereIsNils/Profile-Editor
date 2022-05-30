@@ -12,6 +12,16 @@ namespace Profile_Editor.ViewModel
     internal class CPViewModel : BaseViewModel
     {
         public MainViewModel viewModel;
+        private int _position;
+        public int Position
+        {
+            get { return _position; }
+            set
+            {
+                _position = value;
+                OnPropertyChanged(nameof(Position));
+            }
+        }
         public ICommand CBPositionsChangedCommand { get; set; }
         public ICommand ChairHeightCommand { get; set; }
         public ICommand BackHeightCommand { get; set; }
@@ -99,31 +109,18 @@ namespace Profile_Editor.ViewModel
         public CPViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             CBPositionsChangedCommand = new CBPositionsChangedCommand(this, userSettingsStore);
-            ChairHeightCommand = new ChairHeightCommand(userSettingsStore);
-            BackHeightCommand = new BackHeightCommand(userSettingsStore);
-            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore);
-            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore);
-            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore);
-            SeatTiltCommand = new SeatTiltCommand(userSettingsStore);
+            ChairHeightCommand = new ChairHeightCommand(userSettingsStore, Position);
+            BackHeightCommand = new BackHeightCommand(userSettingsStore, Position);
+            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore, Position);
+            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, Position);
+            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, Position);
+            SeatTiltCommand = new SeatTiltCommand(userSettingsStore, Position);
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
 
-            UpdateSliders(1);
+            Position = -1;
 
-        }
-
-        private void UpdateSliders(int i)
-        {
-            i = 0;
-            if (_userSettingsStore.userSettings.ChairPositions == null) return;
-
-            Axis1 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis1);
-            Axis2 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis2);
-            Axis3 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis3);
-            Axis4 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis4);
-            Axis5 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis5);
-            Axis6 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis6);
         }
     }
 }
