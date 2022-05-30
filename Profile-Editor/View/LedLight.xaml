@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d" 
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
@@ -38,12 +39,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Farbtemperatur:" FontSize="15" 
+            <TextBlock Text="Intensität:" FontSize="15" 
                        Grid.Row="0" 
                        VerticalAlignment="Center" HorizontalAlignment="Left" 
                        Margin="10 0 0 0"/>
             
-            <TextBlock Text="Intensität:" FontSize="15" 
+            <TextBlock Text="Farbtemperatur:" FontSize="15" 
                        Grid.Row="1" 
                        VerticalAlignment="Center" HorizontalAlignment="Left" 
                        Margin="10 0 0 0"/>
@@ -58,23 +59,37 @@
                        VerticalAlignment="Center" HorizontalAlignment="Left" 
                        Margin="10 0 0 0"/>
 
-            <Slider x:Name="sColorTemp" 
-                    Grid.Row="0" Grid.Column="1"
-                    VerticalAlignment="Center" HorizontalAlignment="Left"
-                    Width="250"
-                    Maximum="100" Minimum="0"
-                    TickFrequency="1"
-                    IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sColorTemp, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-
             <Slider x:Name="sIntensity" 
-                    Grid.Row="1" Grid.Column="1"
+                    Grid.Row="0" Grid.Column="1"
                     VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
                     Maximum="5" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sIntensity, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    Value="{Binding Intensity, Mode=TwoWay}"
+                    ToolTip="{Binding ElementName=sIntensity, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding IntensityCommand}" CommandParameter="{Binding ElementName=sIntensity, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
+
+            <Slider x:Name="sColorTemp" 
+                    Grid.Row="1" Grid.Column="1"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Width="250"
+                    Maximum="100" Minimum="0"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    Value="{Binding ColorTemp, Mode=TwoWay}"
+                    ToolTip="{Binding ElementName=sColorTemp, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding ColorTempCommand}" CommandParameter="{Binding ElementName=sColorTemp, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
 
             <Slider x:Name="sDimMode" 
                     Grid.Row="2" Grid.Column="1"
@@ -83,7 +98,14 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sDimMode, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    Value="{Binding DimMode, Mode=TwoWay}"
+                    ToolTip="{Binding ElementName=sDimMode, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding DimModeCommand}" CommandParameter="{Binding ElementName=sDimMode, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
 
             <Slider x:Name="sDimIntensity" 
                     Grid.Row="3" Grid.Column="1"
@@ -92,7 +114,14 @@
                     Maximum="5" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sDimIntensity, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    Value="{Binding DimIntensity, Mode=TwoWay}"
+                    ToolTip="{Binding ElementName=sDimIntensity, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="ValueChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding DimIntensityCommand}" CommandParameter="{Binding ElementName=sDimIntensity, Path=Value}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+            </Slider>
 
         </Grid>
     </Grid>
