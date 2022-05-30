@@ -43,7 +43,7 @@ namespace Profile_Editor.ViewModel
 
         public UserSettings userSettings { get; set; }
 
-        #region sliders
+        #region CPViewModel Members
         private double _Axis1;
         public double Axis1
         {
@@ -104,7 +104,7 @@ namespace Profile_Editor.ViewModel
                 OnPropertyChanged(nameof(Axis6));
             }
         }
-        #endregion sliders
+        #endregion CPViewModel Members
 
         public CPViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
