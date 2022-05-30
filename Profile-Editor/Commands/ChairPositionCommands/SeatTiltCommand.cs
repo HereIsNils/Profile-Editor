@@ -11,7 +11,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
     internal class SeatTiltCommand : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
-        private int i
+        private int i;
 
         public SeatTiltCommand(UserSettingsStore userSettingsStore, int i)
         {

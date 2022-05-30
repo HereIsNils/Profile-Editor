@@ -11,7 +11,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
     internal class SeatCorrectionCommand : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
-        private int i
+        private int i;
 
         public SeatCorrectionCommand(UserSettingsStore userSettingsStore, int i)
         {
