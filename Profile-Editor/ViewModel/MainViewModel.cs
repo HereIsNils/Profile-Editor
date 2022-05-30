@@ -6,7 +6,7 @@ namespace Profile_Editor.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
-        private readonly UserSettingsStore _userSettingsStore;
+        private UserSettingsStore _userSettingsStore;
         private CPViewModel _cpViewModel;
         public CPViewModel CPViewModel 
         { 
