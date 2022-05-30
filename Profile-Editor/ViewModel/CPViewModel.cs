@@ -3,6 +3,8 @@ using Profile_Editor.Commands.ChairPositionCommands;
 using Profile_Editor.Model;
 using Profile_Editor.Stores;
 using System;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace Profile_Editor.ViewModel
@@ -39,7 +41,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis1 = value;
-                OnPropertyChanged(nameof(_Axis1));
+                OnPropertyChanged(nameof(Axis1));
             }
         }
         private double _Axis2;
@@ -49,7 +51,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis2 = value;
-                OnPropertyChanged(nameof(_Axis2));
+                OnPropertyChanged(nameof(Axis2));
             }
         }
         private double _Axis3;
@@ -59,7 +61,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis3 = value;
-                OnPropertyChanged(nameof(_Axis3));
+                OnPropertyChanged(nameof(Axis3));
             }
         }
         private double _Axis4;
@@ -69,7 +71,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis4 = value;
-                OnPropertyChanged(nameof(_Axis4));
+                OnPropertyChanged(nameof(Axis4));
             }
         }
         private double _Axis5;
@@ -79,7 +81,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis5 = value;
-                OnPropertyChanged(nameof(_Axis5));
+                OnPropertyChanged(nameof(Axis5));
             }
         }
         private double _Axis6;
@@ -89,7 +91,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Axis6 = value;
-                OnPropertyChanged(nameof(_Axis6));
+                OnPropertyChanged(nameof(Axis6));
             }
         }
         #endregion sliders
@@ -106,25 +108,15 @@ namespace Profile_Editor.ViewModel
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
-            _userSettingsStore.UserSettingsCreated += UpdateSettings;
 
-            Axis1 = 0;
-            Axis2 = 0;
-            Axis3 = 0;
-            Axis4 = 0;
-            Axis5 = 0;
-            Axis6 = 0;
+            UpdateSliders(1);
 
-        }
-
-        private void UpdateSettings(UserSettings settings)
-        {
-            CPViewModel vm = new CPViewModel(_userSettingsStore, settings);
         }
 
         private void UpdateSliders(int i)
         {
             i = 0;
+            if (_userSettingsStore.userSettings.ChairPositions == null) return;
 
             Axis1 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis1);
             Axis2 = Convert.ToDouble(_userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis2);

@@ -1,6 +1,7 @@
 ﻿using Profile_Editor.Model;
 using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
+using System.Diagnostics;
 using System.Windows;
 
 namespace Profile_Editor
@@ -27,7 +28,7 @@ namespace Profile_Editor
             ISViewModel isViewModel = new ISViewModel();
             LLViewModel llViewModel = new LLViewModel();
             SKViewModel skViewModel = new SKViewModel();
-            TViewModel tViewModel = new TViewModel();
+            TViewModel tViewModel = new TViewModel(_userSettingsStore, _userSettings);
             VViewModel vViewModel = new VViewModel();
 
             MainViewModel mainViewModel = new MainViewModel(cpViewModel,
@@ -39,11 +40,12 @@ namespace Profile_Editor
                                                             vViewModel,
                                                             _userSettingsStore);
 
-            MainWindow = new MainWindow()
+            MainWindow window = new MainWindow()
             {
-                DataContext = mainViewModel
+               DataContext = mainViewModel
             };
             MainWindow.Show();
+            Debug.WriteLine(window.DataContext);
             base.OnStartup(e);
         }
     }
