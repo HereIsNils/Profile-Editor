@@ -27,7 +27,7 @@ namespace Profile_Editor
             IViewModel iViewModel = new IViewModel();
             ISViewModel isViewModel = new ISViewModel();
             LLViewModel llViewModel = new LLViewModel(_userSettingsStore, _userSettings);
-            SKViewModel skViewModel = new SKViewModel();
+            SKViewModel skViewModel = new SKViewModel(_userSettingsStore, _userSettings);
             TViewModel tViewModel = new TViewModel(_userSettingsStore, _userSettings);
             VViewModel vViewModel = new VViewModel();
 

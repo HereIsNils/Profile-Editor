@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d" 
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
@@ -70,43 +71,157 @@
                       Width="160" 
                       Grid.Row="0" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
-                      Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            
+                      Margin="80 0 0 0"
+                      SelectedIndex="{Binding Position1, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+                
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn1Command}" CommandParameter="{Binding ElementName=cbSoftBtn1, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
+
             <ComboBox x:Name="cbSoftBtn2" FontSize="15" 
                       Width="160" 
                       Grid.Row="1" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
                       Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            
+                      SelectedIndex="{Binding Position2, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn2Command}" CommandParameter="{Binding ElementName=cbSoftBtn2, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
+
             <ComboBox x:Name="cbSoftBtn3" FontSize="15" 
                       Width="160" 
                       Grid.Row="2" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
                       Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            
+                      SelectedIndex="{Binding Position3, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn3Command}" CommandParameter="{Binding ElementName=cbSoftBtn3, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
+
             <ComboBox x:Name="cbSoftBtn4" FontSize="15" 
                       Width="160" 
                       Grid.Row="3" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
                       Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            
+                      SelectedIndex="{Binding Position4, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn4Command}" CommandParameter="{Binding ElementName=cbSoftBtn4, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
+
             <ComboBox x:Name="cbSoftBtn5" FontSize="15" 
                       Width="160" 
                       Grid.Row="4" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
                       Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
-            
+                      SelectedIndex="{Binding Position5, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn5Command}" CommandParameter="{Binding ElementName=cbSoftBtn5, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
+
             <ComboBox x:Name="cbSoftBtn6" FontSize="15" 
                       Width="160" 
                       Grid.Row="5" 
                       VerticalAlignment="Center" HorizontalAlignment="Left" 
                       Margin="80 0 0 0" 
-                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen"/>
+                      SelectedIndex="{Binding Position6, Mode=TwoWay}"
+                      IsEditable="True" IsReadOnly="True" Text="Funktion auswählen">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn6Command}" CommandParameter="{Binding ElementName=cbSoftBtn6, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+                
+                <ComboBoxItem Tag="0" Content="Licht an/aus"/>
+                <ComboBoxItem Tag="1" Content="Licht dimmen"/>
+                <ComboBoxItem Tag="2" Content="Modus Lichtlaser"/>
+                <ComboBoxItem Tag="3" Content="Becher füllen"/>
+                <ComboBoxItem Tag="4" Content="Schale spülen"/>
+                <ComboBoxItem Tag="5" Content="Klingel"/>
+                <ComboBoxItem Tag="6" Content="Bildansicht"/>
+                <ComboBoxItem Tag="7" Content="Notfallposition"/>
+                <ComboBoxItem Tag="8" Content="Bildschirm sperren"/>
+                <ComboBoxItem Tag="9" Content="Keine Funktion"/>
+            </ComboBox>
         </Grid>
 
     </Grid>
