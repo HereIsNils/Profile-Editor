@@ -48,7 +48,8 @@
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
                               Width="30" Height="30"  
                               Margin="10 0 0 0"
-                              Grid.Column="0" Grid.Row="0">
+                              Grid.Column="0" Grid.Row="0"
+                              IsChecked="{Binding Btn1}">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
@@ -59,7 +60,8 @@
                          Grid.Column="1" Grid.Row="0" 
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Min1}"/>
                 
                 <TextBox x:Name="tbTimer1S" 
                          Width="60" Height="30"
@@ -95,7 +97,8 @@
                          Grid.Column="1" Grid.Row="0" 
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Min2}"/>
 
                 <TextBox x:Name="tbTimer2S" 
                          Width="60" Height="30"
@@ -103,7 +106,8 @@
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Margin="10 0 0 0"  
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Sek2}"/>
             </Grid>
             <!--#endregion row 2-->
 
@@ -130,7 +134,8 @@
                          Grid.Column="1" Grid.Row="0" 
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Min3}"/>
 
                 <TextBox x:Name="tbTimer3S" 
                          Width="60" Height="30"
@@ -138,7 +143,8 @@
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Margin="10 0 0 0"  
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Sek3}"/>
             </Grid>
             <!--#endregion row 3-->
 
@@ -165,7 +171,8 @@
                          Grid.Column="1" Grid.Row="0" 
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Min4}"/>
 
                 <TextBox x:Name="tbTimer4S" 
                          Width="60" Height="30"
@@ -173,7 +180,8 @@
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Margin="10 0 0 0"  
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Sek4}"/>
             </Grid>
             <!--#endregion row 4-->
 
@@ -200,7 +208,8 @@
                          Grid.Column="1" Grid.Row="0" 
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Min5}"/>
 
                 <TextBox x:Name="tbTimer5S" 
                          Width="60" Height="30"
@@ -208,7 +217,8 @@
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Margin="10 0 0 0"  
                          FontSize="15" FontStyle="Normal" 
-                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"/>
+                         adorners:Watermark.Text="Sek" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
+                         Text="{Binding Sek5}"/>
             </Grid>
             <!--#endregion row 5-->
         </Grid>
