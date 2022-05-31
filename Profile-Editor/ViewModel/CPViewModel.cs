@@ -13,15 +13,7 @@ namespace Profile_Editor.ViewModel
     {
         public MainViewModel viewModel;
         private int _position;
-        public int Position
-        {
-            get { return _position; }
-            set
-            {
-                _position = value;
-                OnPropertyChanged(nameof(Position));
-            }
-        }
+       
         public ICommand CBPositionsChangedCommand { get; set; }
         public ICommand ChairHeightCommand { get; set; }
         public ICommand BackHeightCommand { get; set; }
@@ -44,6 +36,16 @@ namespace Profile_Editor.ViewModel
         public UserSettings userSettings { get; set; }
 
         #region CPViewModel Members
+        public int Position
+        {
+            get { return _position; }
+            set
+            {
+                _position = value;
+                OnPropertyChanged(nameof(Position));
+            }
+        }
+
         private double _Axis1;
         public double Axis1
         {
