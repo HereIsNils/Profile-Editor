@@ -66,14 +66,14 @@ namespace Profile_Editor.ViewModel
             }
         }
 
-        private int _dimIntnesity;
-        public int DimIntnesity
+        private int _dimIntensity;
+        public int DimIntensity
         {
-            get { return _dimIntnesity; }
+            get { return _dimIntensity; }
             set 
             { 
-                _dimIntnesity = value;
-                OnPropertyChanged(nameof(DimIntnesity));
+                _dimIntensity = value;
+                OnPropertyChanged(nameof(DimIntensity));
             }
         }
         #endregion IViewModel Members
