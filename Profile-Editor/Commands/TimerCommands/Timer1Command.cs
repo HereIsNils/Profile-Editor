@@ -1,10 +1,6 @@
 ﻿using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Profile_Editor.Commands.TimerCommands
@@ -12,17 +8,14 @@ namespace Profile_Editor.Commands.TimerCommands
     internal class Timer1Command : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
-        private int seconds = 0;
-        private int minutes = 0;
-        private bool timer = true;
+        private TViewModel tViewModel { get; }
 
         public event EventHandler? CanExecuteChanged;
 
-        public Timer1Command(UserSettingsStore userSettingsStore, int seconds, int minutes, bool timer)
+        public Timer1Command(UserSettingsStore userSettingsStore, TViewModel tViewModel)
         {
-            this.seconds = seconds;
-            this.minutes = minutes;
-            this.timer = timer;
+            this.userSettingsStore = userSettingsStore;
+            this.tViewModel = tViewModel;
         }
 
 
@@ -33,11 +26,11 @@ namespace Profile_Editor.Commands.TimerCommands
 
         public void Execute(object? parameter)
         {
-            int min = GetMin(minutes);
-            int sec = min + seconds;
+            int min = GetMin(tViewModel.Min1);
+            int sec = min + tViewModel.Sek1;
             string dir = "1";
 
-            if (timer)
+            if (tViewModel.Btn1)
             {
                 dir = "2";
             }
@@ -48,9 +41,9 @@ namespace Profile_Editor.Commands.TimerCommands
 
         private int GetMin(int min)
         {
-            int sec =0;
+            int sec = 0;
             int i = 0;
-            while (min <= i)
+            while (min > i)
             {
                 sec = sec + 60;
                 ++i;

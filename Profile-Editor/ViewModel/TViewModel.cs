@@ -38,7 +38,7 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Sek1 = value;
-                OnPropertyChanged(nameof(_Sek1));
+                OnPropertyChanged(nameof(Sek1));
             }
         }
 
@@ -150,7 +150,51 @@ namespace Profile_Editor.ViewModel
             set
             {
                 _Btn1 = value;
-                OnPropertyChanged(nameof(_Btn1));
+                OnPropertyChanged(nameof(Btn1));
+            }
+        }
+
+        private bool _Btn2;
+        public bool Btn2
+        {
+            get { return _Btn2; }
+            set
+            {
+                _Btn2 = value;
+                OnPropertyChanged(nameof(Btn2));
+            }
+        }
+
+        private bool _Btn3;
+        public bool Btn3
+        {
+            get { return _Btn3; }
+            set
+            {
+                _Btn3 = value;
+                OnPropertyChanged(nameof(Btn3));
+            }
+        }
+
+        private bool _Btn4;
+        public bool Btn4
+        {
+            get { return _Btn4; }
+            set
+            {
+                _Btn4 = value;
+                OnPropertyChanged(nameof(Btn4));
+            }
+        }
+
+        private bool _Btn5;
+        public bool Btn5
+        {
+            get { return _Btn5; }
+            set
+            {
+                _Btn5 = value;
+                OnPropertyChanged(nameof(Btn5));
             }
         }
         #endregion TViewModel Members
@@ -159,7 +203,11 @@ namespace Profile_Editor.ViewModel
         {
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
-            Timer1Command = new Timer1Command(userSettingsStore, Sek1, Min1, true);
+            Timer1Command = new Timer1Command(userSettingsStore, this);
+            Timer2Command = new Timer2Command(userSettingsStore, this);
+            Timer3Command = new Timer3Command(userSettingsStore, this);
+            Timer4Command = new Timer4Command(userSettingsStore, this);
+            Timer5Command = new Timer5Command(userSettingsStore, this);
         }
 
     }
