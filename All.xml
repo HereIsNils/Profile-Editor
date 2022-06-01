@@ -774,7 +774,7 @@
             <!--Timer 4-->
             <TimerNumber>4</TimerNumber>
             <!--Stopwatch (count-up)-->
-            <Direction>2</Direction>
+            <Direction>1</Direction>
             <!--interval (in 1s)-->
             <Interval>0</Interval>
         </Timer>
@@ -782,7 +782,7 @@
             <!--Timer 5-->
             <TimerNumber>5</TimerNumber>
             <!--Stopwatch (count-up)-->
-            <Direction>2</Direction>
+            <Direction>1</Direction>
             <!--interval (in 1s)-->
             <Interval>0</Interval>
         </Timer>
