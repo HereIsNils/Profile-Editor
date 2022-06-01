@@ -118,7 +118,7 @@
                     Maximum="100" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    Value="{Binding Axis1, UpdateSourceTrigger=PropertyChanged}"
+                    Value="{Binding Axis1}"
                     ToolTip="{Binding ElementName=sChairHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
