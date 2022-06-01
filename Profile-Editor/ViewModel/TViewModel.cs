@@ -1,6 +1,7 @@
 ﻿using Profile_Editor.Commands.TimerCommands;
 using Profile_Editor.Model;
 using Profile_Editor.Stores;
+using System;
 using System.Windows.Input;
 
 namespace Profile_Editor.ViewModel
@@ -9,11 +10,18 @@ namespace Profile_Editor.ViewModel
     {
         public MainViewModel viewModel;
 
+        #region Commands
         public ICommand Timer1Command { get; set; }
         public ICommand Timer2Command { get; set; }
         public ICommand Timer3Command { get; set; }
         public ICommand Timer4Command { get; set; }
         public ICommand Timer5Command { get; set; }
+        public ICommand Btn1Command { get; set; }
+        public ICommand Btn2Command { get; set; }
+        public ICommand Btn3Command { get; set; }
+        public ICommand Btn4Command { get; set; }
+        public ICommand Btn5Command { get; set; }
+        #endregion Commands
 
         private UserSettingsStore _userSettingsStore;
         public UserSettingsStore UserSettingsStore
@@ -23,6 +31,7 @@ namespace Profile_Editor.ViewModel
             {
                 _userSettingsStore = value;
                 OnPropertyChanged(nameof(_userSettingsStore));
+                
             }
         }
 
@@ -208,6 +217,63 @@ namespace Profile_Editor.ViewModel
             Timer3Command = new Timer3Command(userSettingsStore, this);
             Timer4Command = new Timer4Command(userSettingsStore, this);
             Timer5Command = new Timer5Command(userSettingsStore, this);
+
+            Btn1Command = new Btn1Command(userSettingsStore);
+            Btn2Command = new Btn2Command(userSettingsStore);
+            Btn3Command = new Btn3Command(userSettingsStore);
+            Btn4Command = new Btn4Command(userSettingsStore);
+            Btn5Command = new Btn5Command(userSettingsStore);
+
+
+            _userSettingsStore.UserSettingsCreated += RefreshView;
+        }
+
+        private void RefreshView(UserSettings settings)
+        {
+            if (settings.Timers == null) return;
+
+            Min1 = GetMin(Convert.ToInt32(settings.Timers[0].Timer[0].Interval));
+            Sek1 = GetSec(Convert.ToInt32(settings.Timers[0].Timer[0].Interval));
+            Btn1 = GetBtn(settings.Timers[0].Timer[0].Direction);
+
+            Min2 = GetMin(Convert.ToInt32(settings.Timers[0].Timer[1].Interval));
+            Sek2 = GetSec(Convert.ToInt32(settings.Timers[0].Timer[1].Interval));
+            Btn2 = GetBtn(settings.Timers[0].Timer[1].Direction);
+
+            Min3 = GetMin(Convert.ToInt32(settings.Timers[0].Timer[2].Interval));
+            Sek3 = GetSec(Convert.ToInt32(settings.Timers[0].Timer[2].Interval));
+            Btn3 = GetBtn(settings.Timers[0].Timer[2].Direction);
+
+            Min4 = GetMin(Convert.ToInt32(settings.Timers[0].Timer[3].Interval));
+            Sek4 = GetSec(Convert.ToInt32(settings.Timers[0].Timer[3].Interval));
+            Btn4 = GetBtn(settings.Timers[0].Timer[3].Direction);
+
+            Min5 = GetMin(Convert.ToInt32(settings.Timers[0].Timer[4].Interval));
+            Sek5 = GetSec(Convert.ToInt32(settings.Timers[0].Timer[4].Interval));
+            Btn5 = GetBtn(settings.Timers[0].Timer[4].Direction);
+        }
+
+        private int GetMin(int i)
+        {
+            int min, sec;
+
+            sec = i % 60;
+            min = i - sec;
+            min = min / 60;
+            return min;
+        }
+
+        private int GetSec(int i)
+        {
+            int sec;
+            sec = i % 60;
+            return sec;
+        }
+
+        private bool GetBtn(string i)
+        {
+            if (i == "2") return false;
+            return true;
         }
 
     }

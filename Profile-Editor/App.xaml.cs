@@ -29,7 +29,7 @@ namespace Profile_Editor
             LLViewModel llViewModel = new LLViewModel(_userSettingsStore, _userSettings);
             SKViewModel skViewModel = new SKViewModel(_userSettingsStore, _userSettings);
             TViewModel tViewModel = new TViewModel(_userSettingsStore, _userSettings);
-            VViewModel vViewModel = new VViewModel();
+            VViewModel vViewModel = new VViewModel(_userSettingsStore, _userSettings);
 
             MainViewModel mainViewModel = new MainViewModel(cpViewModel,
                                                             iViewModel,

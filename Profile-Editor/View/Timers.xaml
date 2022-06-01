@@ -54,6 +54,13 @@
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
+
+                    <Behaviors:Interaction.Triggers>
+                        <Behaviors:EventTrigger EventName="Click">
+                            <Behaviors:InvokeCommandAction Command="{Binding Btn1Command}" CommandParameter="{Binding ElementName=tbtnTimer1, Path=IsChecked}"/>
+                        </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
+                    
                 </ToggleButton>
 
                 <TextBox x:Name="tbTimer1M" 
@@ -62,7 +69,7 @@
                          HorizontalAlignment="Center" VerticalAlignment="Center" 
                          FontSize="15" FontStyle="Normal" 
                          adorners:Watermark.Text="Min" adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
-                         Text="{Binding Min1, Mode=TwoWay}">
+                         Text="{Binding Min1}">
                     <Behaviors:Interaction.Triggers>
                         <Behaviors:EventTrigger EventName="LostFocus">
                             <Behaviors:InvokeCommandAction Command="{Binding Timer1Command}"/>
@@ -83,7 +90,7 @@
                             <Behaviors:InvokeCommandAction Command="{Binding Timer1Command}"/>
                         </Behaviors:EventTrigger>
                     </Behaviors:Interaction.Triggers>
-                </TextBox>
+                </TextBox>     
             </Grid>
             <!--#endregion row 1-->
             
