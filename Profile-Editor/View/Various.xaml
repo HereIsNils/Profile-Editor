@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:local="clr-namespace:Profile_Editor.View"
              mc:Ignorable="d" 
              d:DesignHeight="354" d:DesignWidth="420" Background="White">
@@ -45,8 +46,25 @@
                       VerticalAlignment="Center" HorizontalAlignment="Left"
                       IsEditable="True"
                       IsReadOnly="True"
-                      Text="Deutsch"
-                      Margin="75 0 0 0"/>
+                      Margin="75 0 0 0">
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding LanguageChangeCommand}" CommandParameter="{Binding ElementName=cbLanguage, Path=SelectedItem.Tag}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+
+                <ComboBoxItem Tag="1" Content="Deutsch"/>
+                <ComboBoxItem Tag="2" Content="Englisch (UK)"/>
+                <ComboBoxItem Tag="3" Content="Französisch"/>
+                <ComboBoxItem Tag="4" Content="Dänisch"/>
+                <ComboBoxItem Tag="5" Content="Spanisch"/>
+                <ComboBoxItem Tag="6" Content="Italienisch"/>
+                <ComboBoxItem Tag="7" Content="Polnisch"/>
+                <ComboBoxItem Tag="8" Content="Japanisch"/>
+                <ComboBoxItem Tag="9" Content="Englisch (US)"/>
+                <ComboBoxItem Tag="10" Content="Russisch"/>
+            </ComboBox>
         </Grid>
     </Grid>
 </UserControl>
