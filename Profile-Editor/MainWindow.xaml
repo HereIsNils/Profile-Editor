@@ -22,18 +22,6 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="addAppLvl"
-                    Grid.Row="1"
-                    Height="40px"
-                    Width="40px"
-                    BorderThickness="0"
-                    VerticalAlignment="Top"
-                    Visibility="Collapsed">
-                <Button.Background>
-                    <ImageBrush ImageSource="/add_icon.png"/>
-                </Button.Background>
-            </Button>
-
             <Button x:Name="saveData"
                     Grid.Row="1"
                     Height="40px"
@@ -42,7 +30,8 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Margin="20 10 0 0"
-                    ToolTip="Save">
+                    ToolTip="Save"
+                    Command="{Binding SaveDataCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/save_icon.png"/>
                 </Button.Background>
@@ -61,7 +50,36 @@
                 <Button.Background>
                     <ImageBrush ImageSource="/publish_icon.png"/>
                 </Button.Background>
+            </Button>
 
+            <Button x:Name="btnSaveDataAs"
+                    Grid.Row="1"
+                    Height="40px"
+                    Width="40px"
+                    BorderThickness="0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="0 60 20 0"
+                    ToolTip="Import"
+                    Command="{Binding SaveDataAsCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/saveas_icon.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnDefaultFile"
+                    Grid.Row="1"
+                    Height="40px"
+                    Width="40px"
+                    BorderThickness="0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="20 60 0 0"
+                    ToolTip="Save"
+                    Command="{Binding DefaultFileCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/settings_icon.png"/>
+                </Button.Background>
             </Button>
 
         </Grid>
