@@ -22,6 +22,15 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <ComboBox Grid.Row="0"
+                      Margin="10 10 0 10"
+                      IsEditable="True"
+                      IsReadOnly="True"
+                      FontSize="15"
+                      ItemsSource="{Binding AppLevels}">
+                
+            </ComboBox>
+
             <Button x:Name="saveData"
                     Grid.Row="1"
                     Height="40px"

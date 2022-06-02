@@ -1,6 +1,10 @@
 ﻿using Profile_Editor.Commands;
+using Profile_Editor.Model;
 using Profile_Editor.Stores;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows.Input;
+using System.Xml.Serialization;
 
 namespace Profile_Editor.ViewModel
 {
@@ -10,15 +14,15 @@ namespace Profile_Editor.ViewModel
 
         #region Properties
         private CPViewModel _CPViewModel;
-        public CPViewModel CPViewModel 
-        { 
+        public CPViewModel CPViewModel
+        {
             get { return _CPViewModel; }
             set { _CPViewModel = value; OnPropertyChanged(nameof(CPViewModel)); }
         }
 
         private IViewModel _IViewModel;
-        public IViewModel IViewModel 
-        { 
+        public IViewModel IViewModel
+        {
             get { return _IViewModel; }
             set { _IViewModel = value; OnPropertyChanged(nameof(IViewModel)); }
         }
@@ -45,9 +49,9 @@ namespace Profile_Editor.ViewModel
         }
 
         private TViewModel _TViewModel;
-        public TViewModel TViewModel 
+        public TViewModel TViewModel
         {
-            get { return _TViewModel; } 
+            get { return _TViewModel; }
             set { _TViewModel = value; OnPropertyChanged(nameof(TViewModel)); }
         }
 
@@ -63,6 +67,20 @@ namespace Profile_Editor.ViewModel
         {
             get { return _DefaultPath; }
             set { _DefaultPath = value; OnPropertyChanged(nameof(DefaultPath)); }
+        }
+
+        private string _CurrentPath;
+        public string CurrentPath
+        {
+            get { return _CurrentPath; }
+            set { _CurrentPath = value; OnPropertyChanged(nameof(CurrentPath));}
+        }
+
+        private List<string> _AppLevels;
+        public List<string> AppLevels 
+        {
+            get { return _AppLevels; }
+            set { _AppLevels = value; OnPropertyChanged(nameof(AppLevels)); }
         }
         #endregion Properties
 
@@ -82,10 +100,10 @@ namespace Profile_Editor.ViewModel
             VViewModel vViewModel,
             UserSettingsStore userSettingsStore)
         {
-            ImportXmlCommand = new ImportXmlCommand(userSettingsStore);
+            ImportXmlCommand = new ImportXmlCommand(userSettingsStore, this);
             DefaultFileCommand = new DefaultFileCommand(userSettingsStore, this);
-            //SaveDataAsCommand = new SaveDataAsCommand();
-            //SaveDataCommand = new SaveDataCommand();
+            SaveDataAsCommand = new SaveDataAsCommand(userSettingsStore, this);
+            SaveDataCommand = new SaveDataCommand(userSettingsStore, this);
 
             _userSettingsStore = userSettingsStore;
             CPViewModel = cpViewModel;
@@ -95,7 +113,43 @@ namespace Profile_Editor.ViewModel
             SKViewModel = skViewModel;
             TViewModel = tViewModel;
             VViewModel = vViewModel;
+            AppLevels = new List<string>();
 
+            _userSettingsStore.UserSettingsCreated += RefreshAppLvl;
+
+            fillView();
+        }
+
+        private void fillView()
+        {
+            if(DefaultPath == null)
+            {
+                UserSettings settings = new UserSettings();
+                // this needs work!!!!!!!!!!!!!!!!!!
+                return;
+            }
+            string path = DefaultPath;
+            XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                if (fs == null | serializer == null) return;
+                UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
+
+                if (userSettings == null) return;
+                _userSettingsStore.CreateUserSettings(userSettings);
+            }
+        }
+
+        private void RefreshAppLvl(UserSettings settings)
+        {
+            AppLevels.Clear();
+            for (int i = 0; i < 3; i++)
+            {
+                AppLevels.Add(settings.AppLevelNames[0].AppLevelName[i].Value);
+            }
+            AppLevels.Add("Manual");
+            AppLevels.Add("Endo");
+            AppLevels.Add("Chirogie");
         }
     }
 }

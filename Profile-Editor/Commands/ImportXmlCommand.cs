@@ -18,9 +18,12 @@ namespace Profile_Editor.Commands
     internal class ImportXmlCommand : ICommand
     {
         private readonly UserSettingsStore _userSettingsStore;
-        public ImportXmlCommand(UserSettingsStore userSettingsStore)
+        private readonly MainViewModel mainViewModel;
+
+        public ImportXmlCommand(UserSettingsStore userSettingsStore, MainViewModel mainViewModel)
         {
             _userSettingsStore = userSettingsStore;
+            this.mainViewModel=mainViewModel;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -47,9 +50,9 @@ namespace Profile_Editor.Commands
                 }
             } else
             {
-                // return if explorer gets closed or cancel gets selected
-                return;
+                return; // return if explorer gets closed or cancel gets selected
             }
+            mainViewModel.CurrentPath = filepath;
             createObj(filepath);
         }
 
