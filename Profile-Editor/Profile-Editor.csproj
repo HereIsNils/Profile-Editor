@@ -11,7 +11,9 @@
   <ItemGroup>
     <None Remove="add_icon.png" />
     <None Remove="publish_icon.png" />
+    <None Remove="saveas_icon.png" />
     <None Remove="save_icon.png" />
+    <None Remove="settings_icon.png" />
     <None Remove="View\add_icon.png" />
     <None Remove="View\icons-32-db-32__stopwatch_db.png" />
     <None Remove="View\lightbulb_icon.png" />
@@ -25,7 +27,9 @@
   <ItemGroup>
     <Resource Include="add_icon.png" />
     <Resource Include="publish_icon.png" />
+    <Resource Include="saveas_icon.png" />
     <Resource Include="save_icon.png" />
+    <Resource Include="settings_icon.png" />
     <Resource Include="View\add_icon.png" />
     <Resource Include="View\icons-32-db-32__stopwatch_db.png" />
     <Resource Include="View\lightbulb_icon.png" />
