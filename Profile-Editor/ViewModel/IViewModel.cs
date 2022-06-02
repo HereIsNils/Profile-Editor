@@ -127,17 +127,17 @@ namespace Profile_Editor.ViewModel
 
         public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
-            HolderChangedCommand = new HolderChangedCommand();
-            SCenterValueChangedCommand = new SCenterValueChangedCommand();
-            RotationChangedCommand = new RotationChangedCommand();
-            AuxChangedCommand = new AuxChangedCommand();
-            CoolantStateChangedCommand = new CoolantStateChangedCommand();
-            NaclStateChangedCommand = new NaclStateChangedCommand();
-            AircoolingChangedCommand = new AircoolingChangedCommand();
-            AirWatercoolingChangedCommand = new AirWaterCoolingChangedCommand();
-            NaclcoolingChangedCommand = new NaclcoolingChangedCommand();
-            LuxStateChangedCommand = new LuxStateChangedCommand();
-            LuxLevelChangedCommand = new LuxLevelChangedCommand();
+            HolderChangedCommand = new HolderChangedCommand(userSettingsStore, this);
+            SCenterValueChangedCommand = new SCenterValueChangedCommand(userSettingsStore, this);
+            RotationChangedCommand = new RotationChangedCommand(userSettingsStore, this);
+            AuxChangedCommand = new AuxChangedCommand(userSettingsStore, this);
+            CoolantStateChangedCommand = new CoolantStateChangedCommand(userSettingsStore, this);
+            NaclStateChangedCommand = new NaclStateChangedCommand(userSettingsStore, this);
+            AircoolingChangedCommand = new AircoolingChangedCommand(userSettingsStore, this);
+            AirWatercoolingChangedCommand = new AirWaterCoolingChangedCommand(userSettingsStore, this);
+            NaclcoolingChangedCommand = new NaclcoolingChangedCommand(userSettingsStore, this);
+            LuxStateChangedCommand = new LuxStateChangedCommand(userSettingsStore, this);
+            LuxLevelChangedCommand = new LuxLevelChangedCommand(userSettingsStore, this);
 
             _userSettingsStore = userSettingsStore;
             this.userSettings = userSettings;

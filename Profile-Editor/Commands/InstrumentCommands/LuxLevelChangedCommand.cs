@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Profile_Editor.Stores;
+using Profile_Editor.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +11,15 @@ namespace Profile_Editor.Commands.InstrumentCommands
 {
     internal class LuxLevelChangedCommand : ICommand
     {
+        private UserSettingsStore userSettingsStore;
+        private IViewModel viewModel;
+
+        public LuxLevelChangedCommand(UserSettingsStore userSettingsStore, IViewModel viewModel)
+        {
+            this.userSettingsStore = userSettingsStore;
+            this.viewModel = viewModel;
+        }
+
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
