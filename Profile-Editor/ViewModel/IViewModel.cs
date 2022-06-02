@@ -54,13 +54,6 @@ namespace Profile_Editor.ViewModel
             set { _AppLevel = value; OnPropertyChanged(nameof(AppLevel)); }
         } // sets app level text
 
-        private int _ITypeIndex;
-        public int ITypeIndex
-        {
-            get { return _ITypeIndex; }
-            set { _ITypeIndex = value; OnPropertyChanged(nameof(ITypeIndex)); }
-        }// index of intrument type combobox
-
         private int _SCenterValue;
         public int SCenterValue
         {
@@ -127,7 +120,7 @@ namespace Profile_Editor.ViewModel
 
         public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
-            HolderChangedCommand = new HolderChangedCommand(userSettingsStore, this);
+            HolderChangedCommand = new HolderChangedCommand(this);
             SCenterValueChangedCommand = new SCenterValueChangedCommand(userSettingsStore, this);
             RotationChangedCommand = new RotationChangedCommand(userSettingsStore, this);
             AuxChangedCommand = new AuxChangedCommand(userSettingsStore, this);

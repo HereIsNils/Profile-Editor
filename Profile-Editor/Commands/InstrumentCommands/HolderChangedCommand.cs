@@ -11,12 +11,10 @@ namespace Profile_Editor.Commands.InstrumentCommands
 {
     internal class HolderChangedCommand : ICommand
     {
-        private UserSettingsStore userSettingsStore;
         private IViewModel viewModel;
 
-        public HolderChangedCommand(UserSettingsStore userSettingsStore, IViewModel viewModel)
+        public HolderChangedCommand(IViewModel viewModel)
         {
-            this.userSettingsStore = userSettingsStore;
             this.viewModel = viewModel;
         }
 
@@ -24,12 +22,12 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            viewModel.HolderIndex = Convert.ToInt32(parameter);
         }
     }
 }

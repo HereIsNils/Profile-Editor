@@ -24,7 +24,7 @@ namespace Profile_Editor.View
         public Instruments()
         {
             InitializeComponent();
-            DataContext = new IViewModel();
+            
         }
     }
 }

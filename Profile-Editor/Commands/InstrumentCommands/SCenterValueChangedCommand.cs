@@ -24,11 +24,13 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object? parameter)
         {
+            int i = viewModel.HolderIndex;
+            //userSettingsStore.userSettings.Instruments[appLvl].Instrument[i].Center = parameter.toString();
             throw new NotImplementedException();
         }
     }
