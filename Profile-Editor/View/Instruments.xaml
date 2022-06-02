@@ -40,16 +40,23 @@
             <TextBlock Grid.Row="0"
                        Text="{Binding AppLevel}" FontSize="15"
                        Margin="10"
+                       
                        VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-            <ComboBox Grid.Row="0" 
-                      Margin="10"
+            <TextBlock Text="Halter:" FontSize="15" 
+                       Grid.Row="0" 
+                       VerticalAlignment="Center" HorizontalAlignment="Right" 
+                       Margin="0 0 53 0"/>
+
+            <ComboBox Grid.Row="0"
+                      Width="35"
                       FontSize="15"
-                      Height="25" Width="150"
                       VerticalAlignment="Center" HorizontalAlignment="Right"
+                      Margin="0 0 10 0"
                       IsEditable="True"
                       IsReadOnly="True"
-                      Text="Instrument Typ"/>
+                      Text="1"
+                      SelectedIndex="{Binding HolderIndex}"/>
 
             <TextBlock Text="Fußpedalmitte:" FontSize="15"
                        Grid.Row="1"
@@ -60,10 +67,11 @@
                     Grid.Row="1"
                     VerticalAlignment="Center" HorizontalAlignment="Center"
                     Width="290" Margin="110 0 0 0"
-                    Maximum="255" Minimum="1"
+                    Maximum="128" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sCenter, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sCenter, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                    Value="{Binding SCenterValue}"/>
 
             <TextBlock Text="Rotation:" FontSize="15" 
                        Grid.Row="2" 
@@ -73,30 +81,31 @@
             <ComboBox x:Name="cbRotation"
                      Grid.Row="2"
                      FontSize="15"
-                     Width="160"
+                     Width="166"
                      VerticalAlignment="Center" HorizontalAlignment="Left"
                      Margin="80 0 0 0"
                      IsEditable="True"
                      IsReadOnly="True"
                      Text="Gegen den Uhrzeigersinn">
-                <ComboBoxItem Tag="cw" Content="Im Uhrzeigersinn"/>
-                <ComboBoxItem Tag="ccw" Content="Gegen den Uhrzeigersinn"/>
+                <ComboBoxItem Tag="1" Content="Im Uhrzeigersinn"/>
+                <ComboBoxItem Tag="2" Content="Gegen den Uhrzeigersinn"/>
             </ComboBox>
 
             <TextBlock Text="Beschleunigung:" FontSize="15" 
                        Grid.Row="2" 
                        VerticalAlignment="Center" HorizontalAlignment="Right" 
-                       Margin="0 0 50 0"/>
+                       Margin="0 0 53 0"/>
 
-            <ComboBox x:Name="tbAux"
+            <ComboBox x:Name="cbAux"
                      Grid.Row="2"
-                     Width="30"
+                     Width="35"
                      FontSize="15"
                      VerticalAlignment="Center" HorizontalAlignment="Right"
                      Margin="0 0 10 0"
                      IsEditable="True"
                      IsReadOnly="True"
-                     Text="1">
+                     Text="1"
+                     SelectedIndex="{Binding AuxIndex}">
                 
             </ComboBox>
 
@@ -115,13 +124,15 @@
                           Content="Kühlung" FontSize="15" 
                           Grid.Column="0" Grid.Row="0" 
                           HorizontalAlignment="Left" VerticalAlignment="Center"
-                          Margin="10"/>
+                          Margin="10"
+                          IsChecked="{Binding CoolantState}"/>
 
                 <CheckBox x:Name="cbLux" 
                           Content="Helligkeit" FontSize="15" 
                           Grid.Column="1" Grid.Row="0" 
                           HorizontalAlignment="Right" VerticalAlignment="Center"
-                          Margin="0 0 75 0"/>
+                          Margin="0 0 75 0"
+                          IsChecked="{Binding LuxState}"/>
 
                 <TextBlock Text="Level:" FontSize="15"
                            Grid.Column="1" Grid.Row="1"
@@ -135,13 +146,15 @@
                     Maximum="9" Minimum="1"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    ToolTip="{Binding ElementName=sLux, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    ToolTip="{Binding ElementName=sLux, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                    Value="{Binding LuxLevel}"/>
 
                 <CheckBox x:Name="cbNacl"
                           Content="NaCl aktiv" FontSize="15"
                           Grid.Row="1" Grid.Column="0"
                           VerticalAlignment="Center" HorizontalAlignment="Left"
-                          Margin="10"/>
+                          Margin="10"
+                          IsChecked="{Binding NaclState}"/>
 
                 <Grid Grid.Row="2" Grid.Column="0">
 
@@ -157,17 +170,20 @@
                     <RadioButton Content="Luft" FontSize="15" 
                                  Grid.Column="0" Grid.Row="0" 
                                  Margin="10" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                 IsChecked="{Binding Aircooling}"/>
 
                     <RadioButton Content="NaCl" FontSize="15"
                                  Grid.Column="1" Grid.Row="0"
                                   Margin="10" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                 IsChecked="{Binding AirWatercooling}"/>
 
                     <RadioButton Content="Luft und Wasser" FontSize="15"
                                  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  
                                  Margin="10 0 0 0" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                 IsChecked="{Binding Naclcooling}"/>
 
                 </Grid>
 
