@@ -126,6 +126,8 @@ namespace Profile_Editor.ViewModel
             {
                 UserSettings settings = new UserSettings();
                 // this needs work!!!!!!!!!!!!!!!!!!
+                // subscribe with all viewmodels to UserSettingsCreated
+                // finish instrument commands
                 return;
             }
             string path = DefaultPath;
