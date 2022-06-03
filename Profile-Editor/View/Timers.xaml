@@ -106,10 +106,17 @@
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
                               Width="30" Height="30"  
                               Margin="10 0 0 0"
-                              Grid.Column="0" Grid.Row="0">
+                              Grid.Column="0" Grid.Row="0"
+                              IsChecked="{Binding Btn2}">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
+
+                    <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="Click">
+                        <Behaviors:InvokeCommandAction Command="{Binding Btn2Command}" CommandParameter="{Binding ElementName=tbtnTimer2, Path=IsChecked}"/>
+                    </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
                 </ToggleButton>
 
                 <TextBox x:Name="tbTimer2M" 
@@ -143,10 +150,17 @@
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
                               Width="30" Height="30"  
                               Margin="10 0 0 0"
-                              Grid.Column="0" Grid.Row="0">
+                              Grid.Column="0" Grid.Row="0"
+                              IsChecked="{Binding Btn3}">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
+
+                    <Behaviors:Interaction.Triggers>
+                        <Behaviors:EventTrigger EventName="Click">
+                            <Behaviors:InvokeCommandAction Command="{Binding Btn3Command}" CommandParameter="{Binding ElementName=tbtnTimer3, Path=IsChecked}"/>
+                        </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
                 </ToggleButton>
 
                 <TextBox x:Name="tbTimer3M" 
@@ -180,10 +194,17 @@
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
                               Width="30" Height="30"  
                               Margin="10 0 0 0"
-                              Grid.Column="0" Grid.Row="0">
+                              Grid.Column="0" Grid.Row="0"
+                              IsChecked="{Binding Btn4}">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
+
+                    <Behaviors:Interaction.Triggers>
+                        <Behaviors:EventTrigger EventName="Click">
+                            <Behaviors:InvokeCommandAction Command="{Binding Btn4Command}" CommandParameter="{Binding ElementName=tbtnTimer4, Path=IsChecked}"/>
+                        </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
                 </ToggleButton>
 
                 <TextBox x:Name="tbTimer4M" 
@@ -217,10 +238,17 @@
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
                               Width="30" Height="30"  
                               Margin="10 0 0 0"
-                              Grid.Column="0" Grid.Row="0">
+                              Grid.Column="0" Grid.Row="0"
+                              IsChecked="{Binding Btn5}">
                     <ToggleButton.Background>
                         <ImageBrush ImageSource="/Profile-Editor;component/View/icons-32-db-32__stopwatch_db.png"/>
                     </ToggleButton.Background>
+
+                    <Behaviors:Interaction.Triggers>
+                        <Behaviors:EventTrigger EventName="Click">
+                            <Behaviors:InvokeCommandAction Command="{Binding Btn5Command}" CommandParameter="{Binding ElementName=tbtnTimer5, Path=IsChecked}"/>
+                        </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
                 </ToggleButton>
 
                 <TextBox x:Name="tbTimer5M" 
