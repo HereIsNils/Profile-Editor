@@ -12,14 +12,17 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 {
     internal class ChairHeightCommand : ICommand
     {
-        private UserSettingsStore userSettingsStore { get; }
         private int i;
+
+        private UserSettingsStore userSettingsStore { get; }
+        public CPViewModel CPViewModel { get; }
 
         public event EventHandler? CanExecuteChanged;
 
-        public ChairHeightCommand(UserSettingsStore userSettingsStore, int i)
+        public ChairHeightCommand(UserSettingsStore userSettingsStore, CPViewModel cPViewModel, int i)
         {
             this.userSettingsStore = userSettingsStore;
+            CPViewModel = cPViewModel;
             this.i = i;
         }
         
@@ -30,7 +33,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis1 = parameter.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis1 = CPViewModel.Axis1.ToString();
         }
     }
 }

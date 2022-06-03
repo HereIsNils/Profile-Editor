@@ -1,4 +1,5 @@
 ﻿using Profile_Editor.Stores;
+using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,14 @@ namespace Profile_Editor.Commands.ChairPositionCommands
     internal class HeadrestTiltCommand : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
+        public CPViewModel CPViewModel { get; }
+
         private int i;
 
-        public HeadrestTiltCommand(UserSettingsStore userSettingsStore, int i)
+        public HeadrestTiltCommand(UserSettingsStore userSettingsStore, CPViewModel cPViewModel, int i)
         {
             this.userSettingsStore = userSettingsStore;
+            CPViewModel = cPViewModel;
             this.i = i;
         }
 
@@ -28,7 +32,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis5 = parameter.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis5 = CPViewModel.Axis5.ToString();
         }
     }
 }

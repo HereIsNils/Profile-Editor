@@ -1,4 +1,5 @@
 ﻿using Profile_Editor.Stores;
+using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,17 @@ namespace Profile_Editor.Commands
 {
     internal class BackHeightCommand : ICommand
     {
-        private UserSettingsStore userSettingsStore { get; }
-
-        public event EventHandler? CanExecuteChanged;
         private int i;
 
-        public BackHeightCommand(UserSettingsStore userSettingsStore, int i)
+        private UserSettingsStore userSettingsStore { get; }
+        public CPViewModel CPViewModel { get; }
+
+        public event EventHandler? CanExecuteChanged;
+
+        public BackHeightCommand(UserSettingsStore userSettingsStore, CPViewModel cPViewModel, int i)
         {
             this.userSettingsStore = userSettingsStore;
+            CPViewModel = cPViewModel;
             this.i = i;
         }
 
@@ -28,7 +32,7 @@ namespace Profile_Editor.Commands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis2 = parameter.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis2 = CPViewModel.Axis2.ToString();
         }
     }
 }

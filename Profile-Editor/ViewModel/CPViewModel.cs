@@ -111,12 +111,12 @@ namespace Profile_Editor.ViewModel
         public CPViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             CBPositionsChangedCommand = new CBPositionsChangedCommand(this, userSettingsStore);
-            ChairHeightCommand = new ChairHeightCommand(userSettingsStore, Position);
-            BackHeightCommand = new BackHeightCommand(userSettingsStore, Position);
-            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore, Position);
-            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, Position);
-            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, Position);
-            SeatTiltCommand = new SeatTiltCommand(userSettingsStore, Position);
+            ChairHeightCommand = new ChairHeightCommand(userSettingsStore, this, Position);
+            BackHeightCommand = new BackHeightCommand(userSettingsStore, this, Position);
+            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore, this, Position);
+            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, this, Position);
+            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, this, Position);
+            SeatTiltCommand = new SeatTiltCommand(userSettingsStore, this, Position);
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
