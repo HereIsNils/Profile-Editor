@@ -80,14 +80,22 @@ namespace Profile_Editor.ViewModel
 
         public LLViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
-            IntensityCommand = new IntensityCommand(userSettingsStore);
-            ColorTempCommand = new ColorTempCommand(userSettingsStore);
+            IntensityCommand = new IntensityCommand(userSettingsStore, this);
+            ColorTempCommand = new ColorTempCommand(userSettingsStore, this);
             DimModeCommand = new DimModeCommand(userSettingsStore);
-            DimIntensityCommand = new DimIntensityCommand(userSettingsStore);
+            DimIntensityCommand = new DimIntensityCommand(userSettingsStore, this);
 
             UserSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
+            _userSettingsStore.UserSettingsCreated += RefreshView;
         }
 
+        private void RefreshView(UserSettings settings)
+        {
+            Intensity = Convert.ToInt32(settings.LedLight[0].Intensity);
+            ColorTemp = Convert.ToInt32(settings.LedLight[0].ColorTemperature);
+            DimMode = Convert.ToInt32(settings.LedLight[0].DimMode) - 1;
+            DimIntensity = Convert.ToInt32(settings.LedLight[0].DimIntensity);
+        }
     }
 }

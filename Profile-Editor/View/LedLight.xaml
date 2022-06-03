@@ -79,7 +79,7 @@
                     Grid.Row="1" Grid.Column="1"
                     VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
-                    Maximum="100" Minimum="0"
+                    Maximum="4" Minimum="0"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
                     Value="{Binding ColorTemp, Mode=TwoWay}"
@@ -91,21 +91,22 @@
                 </Behaviors:Interaction.Triggers>
             </Slider>
 
-            <Slider x:Name="sDimMode" 
+            <ComboBox x:Name="cbDimMode" 
                     Grid.Row="2" Grid.Column="1"
                     VerticalAlignment="Center" HorizontalAlignment="Left"
                     Width="250"
-                    Maximum="100" Minimum="0"
-                    TickFrequency="1"
-                    IsSnapToTickEnabled="True"
-                    Value="{Binding DimMode, Mode=TwoWay}"
-                    ToolTip="{Binding ElementName=sDimMode, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                    IsEditable="True"
+                    IsReadOnly="True"
+                    FontSize="15"
+                    SelectedIndex="{Binding DimMode}">
                 <Behaviors:Interaction.Triggers>
-                    <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding DimModeCommand}" CommandParameter="{Binding ElementName=sDimMode, Path=Value}" />
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding DimModeCommand}" CommandParameter="{Binding ElementName=cbDimMode, Path=SelectedItem.Tag}" />
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
-            </Slider>
+                <ComboBoxItem Tag="1" Content="COMPO save"/>
+                <ComboBoxItem Tag="2" Content="Dimm"/>
+            </ComboBox>
 
             <Slider x:Name="sDimIntensity" 
                     Grid.Row="3" Grid.Column="1"

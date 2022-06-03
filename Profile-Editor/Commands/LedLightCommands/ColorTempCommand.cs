@@ -1,4 +1,5 @@
 ﻿using Profile_Editor.Stores;
+using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,24 @@ namespace Profile_Editor.Commands.LedLightCommands
     internal class ColorTempCommand : ICommand
     {
         private UserSettingsStore userSettingsStore { get; }
+        public LLViewModel ViewModel { get; }
+
         public event EventHandler? CanExecuteChanged;
 
-        public ColorTempCommand(UserSettingsStore store)
+        public ColorTempCommand(UserSettingsStore store, LLViewModel viewModel)
         {
             userSettingsStore = store;
+            ViewModel = viewModel;
         }
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.LedLight[0].ColorTemperature = parameter.ToString();
+            userSettingsStore.userSettings.LedLight[0].ColorTemperature = ViewModel.ColorTemp.ToString();
         }
     }
 }
