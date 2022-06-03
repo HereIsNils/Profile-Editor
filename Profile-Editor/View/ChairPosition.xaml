@@ -122,7 +122,7 @@
                     ToolTip="{Binding ElementName=sChairHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding ChairHeightCommand}" CommandParameter="{Binding ElementName=sChairHeight, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding ChairHeightCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
@@ -138,7 +138,7 @@
                     ToolTip="{Binding ElementName=sBackHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding BackHeightCommand}" CommandParameter="{Binding ElementName=sBackHeight, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding BackHeightCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
@@ -154,7 +154,7 @@
                     ToolTip="{Binding ElementName=sSeatCorrection, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding SeatCorrectionCommand}" CommandParameter="{Binding ElementName=sSeatCorrection, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding SeatCorrectionCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
@@ -170,7 +170,7 @@
                     ToolTip="{Binding ElementName=sHeadHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestHeightCommand}" CommandParameter="{Binding ElementName=sHeadHeight, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestHeightCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
@@ -186,7 +186,7 @@
                     ToolTip="{Binding ElementName=sHeadTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestTiltCommand}" CommandParameter="{Binding ElementName=sHeadTilt, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding HeadrestTiltCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
@@ -202,7 +202,7 @@
                     ToolTip="{Binding ElementName=sSeatTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}">
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="ValueChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding SeatTiltCommand}" CommandParameter="{Binding ElementName=sSeatTilt, Path=Value}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding SeatTiltCommand}"/>
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
             </Slider>
