@@ -54,6 +54,7 @@ namespace Profile_Editor.Commands
             }
             mainViewModel.CurrentPath = filepath;
             createObj(filepath);
+            mainViewModel.IsEnabled = true;
         }
 
         public void createObj(string path)

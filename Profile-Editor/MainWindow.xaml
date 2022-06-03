@@ -103,7 +103,8 @@
         <Grid x:Name="centerGrid" 
               Grid.Column="1"
               Width="Auto" Height="Auto"
-              VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+              VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+              IsEnabled="{Binding IsEnabled}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <WrapPanel Orientation="Horizontal">
                     <View:ChairPosition

@@ -82,6 +82,13 @@ namespace Profile_Editor.ViewModel
             get { return _AppLevels; }
             set { _AppLevels = value; OnPropertyChanged(nameof(AppLevels)); }
         }
+
+        private bool _IsEnabled;
+        public bool IsEnabled
+        {
+            get { return _IsEnabled; }
+            set { _IsEnabled = value; OnPropertyChanged(nameof(IsEnabled)); }
+        }
         #endregion Properties
 
         public ICommand ImportXmlCommand { get; set; }
@@ -114,6 +121,7 @@ namespace Profile_Editor.ViewModel
             TViewModel = tViewModel;
             VViewModel = vViewModel;
             AppLevels = new List<string>();
+            IsEnabled = false;
 
             _userSettingsStore.UserSettingsCreated += RefreshAppLvl;
 
@@ -126,8 +134,7 @@ namespace Profile_Editor.ViewModel
             {
                 UserSettings settings = new UserSettings();
                 // this needs work!!!!!!!!!!!!!!!!!!
-                // subscribe with all viewmodels to UserSettingsCreated
-                // finish instrument commands
+                // finish instrument view
                 return;
             }
             string path = DefaultPath;
@@ -139,6 +146,7 @@ namespace Profile_Editor.ViewModel
 
                 if (userSettings == null) return;
                 _userSettingsStore.CreateUserSettings(userSettings);
+                IsEnabled = true;
             }
         }
 
