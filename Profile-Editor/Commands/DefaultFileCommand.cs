@@ -38,6 +38,8 @@ namespace Profile_Editor.Commands
             if (fd.ShowDialog() == true)
             {
                 mainViewModel.DefaultPath = fd.FileName;
+                Settings1.Default.defaultPath = fd.FileName;
+                Settings1.Default.Save();
             }
             else
             {

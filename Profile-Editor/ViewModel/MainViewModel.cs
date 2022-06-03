@@ -83,6 +83,13 @@ namespace Profile_Editor.ViewModel
             set { _AppLevels = value; OnPropertyChanged(nameof(AppLevels)); }
         }
 
+        private int _AppLevelIndex;
+        public int AppLevelIndex
+        {
+            get { return _AppLevelIndex; }
+            set { _AppLevelIndex = value; OnPropertyChanged(nameof(AppLevelIndex)); }
+        }
+
         private bool _IsEnabled;
         public bool IsEnabled
         {
@@ -108,7 +115,7 @@ namespace Profile_Editor.ViewModel
             VViewModel vViewModel,
             UserSettingsStore userSettingsStore)
         {
-            AppLevelChangedCommand = new AppLevelChangedCommand(iViewModel);
+            AppLevelChangedCommand = new AppLevelChangedCommand(iViewModel, this);
             ImportXmlCommand = new ImportXmlCommand(userSettingsStore, this);
             DefaultFileCommand = new DefaultFileCommand(userSettingsStore, this);
             SaveDataAsCommand = new SaveDataAsCommand(userSettingsStore, this);
@@ -132,12 +139,10 @@ namespace Profile_Editor.ViewModel
 
         private void fillView()
         {
-            if(DefaultPath == null)
+            DefaultPath = Settings1.Default.defaultPath;
+            if (DefaultPath == null)
             {
-                UserSettings settings = new UserSettings();
-                // this needs work!!!!!!!!!!!!!!!!!!
-                // finish instrument view
-                return;
+                return; 
             }
             string path = DefaultPath;
             XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));

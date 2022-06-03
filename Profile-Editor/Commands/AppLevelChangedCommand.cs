@@ -11,10 +11,12 @@ namespace Profile_Editor.Commands
     internal class AppLevelChangedCommand : ICommand
     {
         private IViewModel iViewModel;
+        private MainViewModel mainViewModel;
 
-        public AppLevelChangedCommand(IViewModel iViewModel)
+        public AppLevelChangedCommand(IViewModel iViewModel, MainViewModel mainViewModel)
         {
             this.iViewModel = iViewModel;
+            this.mainViewModel = mainViewModel;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -27,6 +29,7 @@ namespace Profile_Editor.Commands
         public void Execute(object? parameter)
         {
             iViewModel.AppLevel = parameter.ToString();
+            iViewModel.AppLevelIndex = mainViewModel.AppLevelIndex;
         }
     }
 }

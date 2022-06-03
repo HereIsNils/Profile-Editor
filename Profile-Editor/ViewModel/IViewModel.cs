@@ -32,11 +32,7 @@ namespace Profile_Editor.ViewModel
         public ICommand SCenterValueChangedCommand { get; set; }
         public ICommand RotationChangedCommand { get; set; }
         public ICommand AuxChangedCommand { get; set; }
-        public ICommand CoolantStateChangedCommand { get; set; }
-        public ICommand NaclStateChangedCommand { get; set; }
-        public ICommand AircoolingChangedCommand { get; set; }
-        public ICommand AirWatercoolingChangedCommand { get; set; }
-        public ICommand NaclcoolingChangedCommand { get; set; }
+        public ICommand CoolantModeChangedCommand { get; set; }
         public ICommand LuxStateChangedCommand { get; set; }
         public ICommand LuxLevelChangedCommand { get; set; }
         #endregion Commands
@@ -47,7 +43,7 @@ namespace Profile_Editor.ViewModel
         {
             get { return _HolderIndex; }
             set { _HolderIndex = value; OnPropertyChanged(nameof(HolderIndex)); }
-        }
+        } // sets the index for the holder to be configured
 
         private string _AppLevel;
         public string AppLevel
@@ -56,12 +52,26 @@ namespace Profile_Editor.ViewModel
             set { _AppLevel = value; OnPropertyChanged(nameof(AppLevel)); }
         } // sets app level text
 
+        private int _AppLevelIndex;
+        public int AppLevelIndex
+        {
+            get { return _AppLevelIndex; }
+            set { _AppLevelIndex = value; OnPropertyChanged(nameof(AppLevelIndex)); }
+        }
+
         private int _SCenterValue;
         public int SCenterValue
         {
             get { return _SCenterValue; }
             set { _SCenterValue = value; OnPropertyChanged(nameof(SCenterValue)); }
         } // value of pedal slider
+
+        private int _RotationIndex;
+        public int RotationIndex
+        {
+            get { return _RotationIndex; }
+            private set { _RotationIndex = value; OnPropertyChanged(nameof(RotationIndex)); }
+        }
 
         private int _AuxIndex;
         public int AuxIndex
@@ -120,6 +130,30 @@ namespace Profile_Editor.ViewModel
         } // value for the lux level
         #endregion IViewModel Members
 
+        #region States
+
+        private bool _RadioGridState;
+        public bool RadioGridState
+        {
+            get { return _RadioGridState; }
+            set { _RadioGridState = value; OnPropertyChanged(nameof(RadioGridState)); }
+        } // state for the grid with all radio buttons
+
+        private bool _NaclButtonState;
+        public bool NaclButtonState
+        {
+            get { return _NaclButtonState; }
+            set { _NaclButtonState = value; OnPropertyChanged(nameof(NaclButtonState)); }
+        } // state for the NaCl radio button
+
+        private bool _LuxLevelState;
+        public bool LuxLevelState
+        {
+            get { return _LuxLevelState; }
+            set { _LuxLevelState = value; OnPropertyChanged(nameof(LuxLevelState)); }
+        }
+        #endregion States
+
         public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             AppLevelCommand = new AppLevelCommand(this);
@@ -127,16 +161,14 @@ namespace Profile_Editor.ViewModel
             SCenterValueChangedCommand = new SCenterValueChangedCommand(userSettingsStore, this);
             RotationChangedCommand = new RotationChangedCommand(userSettingsStore, this);
             AuxChangedCommand = new AuxChangedCommand(userSettingsStore, this);
-            CoolantStateChangedCommand = new CoolantStateChangedCommand(userSettingsStore, this);
-            NaclStateChangedCommand = new NaclStateChangedCommand(userSettingsStore, this);
-            AircoolingChangedCommand = new AircoolingChangedCommand(userSettingsStore, this);
-            AirWatercoolingChangedCommand = new AirWaterCoolingChangedCommand(userSettingsStore, this);
-            NaclcoolingChangedCommand = new NaclcoolingChangedCommand(userSettingsStore, this);
+            CoolantModeChangedCommand = new CoolantModeChangedCommand(userSettingsStore, this);
             LuxStateChangedCommand = new LuxStateChangedCommand(userSettingsStore, this);
             LuxLevelChangedCommand = new LuxLevelChangedCommand(userSettingsStore, this);
 
             _userSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
+
+            //_userSettingsStore.Cret
         }
     }
 }

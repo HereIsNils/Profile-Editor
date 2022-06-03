@@ -24,12 +24,12 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[viewModel.HolderIndex].Auxilliary = parameter.ToString();
         }
     }
 }
