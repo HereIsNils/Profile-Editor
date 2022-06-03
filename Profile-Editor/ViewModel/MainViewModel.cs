@@ -91,6 +91,7 @@ namespace Profile_Editor.ViewModel
         }
         #endregion Properties
 
+        public ICommand AppLevelChangedCommand { get; set; }
         public ICommand ImportXmlCommand { get; set; }
         public ICommand DefaultFileCommand { get; set; }
         public ICommand SaveDataCommand { get; set; }
@@ -107,6 +108,7 @@ namespace Profile_Editor.ViewModel
             VViewModel vViewModel,
             UserSettingsStore userSettingsStore)
         {
+            AppLevelChangedCommand = new AppLevelChangedCommand(iViewModel);
             ImportXmlCommand = new ImportXmlCommand(userSettingsStore, this);
             DefaultFileCommand = new DefaultFileCommand(userSettingsStore, this);
             SaveDataAsCommand = new SaveDataAsCommand(userSettingsStore, this);

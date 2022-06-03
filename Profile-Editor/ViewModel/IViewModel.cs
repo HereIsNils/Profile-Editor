@@ -13,6 +13,7 @@ namespace Profile_Editor.ViewModel
     internal class IViewModel : BaseViewModel
     {
         private UserSettingsStore _userSettingsStore;
+
         public UserSettingsStore UserSettingsStore
         {
             get { return _userSettingsStore; }
@@ -26,6 +27,7 @@ namespace Profile_Editor.ViewModel
         public UserSettings userSettings { get; set; }
 
         #region Commands
+        public ICommand AppLevelCommand { get; set; }
         public ICommand HolderChangedCommand { get; set; }
         public ICommand SCenterValueChangedCommand { get; set; }
         public ICommand RotationChangedCommand { get; set; }
@@ -120,6 +122,7 @@ namespace Profile_Editor.ViewModel
 
         public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
+            AppLevelCommand = new AppLevelCommand(this);
             HolderChangedCommand = new HolderChangedCommand(this);
             SCenterValueChangedCommand = new SCenterValueChangedCommand(userSettingsStore, this);
             RotationChangedCommand = new RotationChangedCommand(userSettingsStore, this);

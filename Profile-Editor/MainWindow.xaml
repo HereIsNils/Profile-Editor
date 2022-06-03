@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:View="clr-namespace:Profile_Editor.View"
+        xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:Profile_Editor"
         mc:Ignorable="d"
         Title="Profil Editor" Height="799px" Width="1509px">
@@ -27,7 +28,8 @@
                        FontSize="20"
                        Height="30" Width="Auto"/>
 
-            <ComboBox Grid.Row="0"
+            <ComboBox x:Name="cbApplvl"
+                      Grid.Row="0"
                       Margin="10 40 0 10"
                       VerticalAlignment="Center"
                       IsEditable="True"
@@ -35,7 +37,13 @@
                       FontSize="15"
                       ItemsSource="{Binding AppLevels}"
                       IsEnabled="{Binding IsEnabled}">
-                
+
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding AppLevelChangedCommand}" CommandParameter="{Binding ElementName=cbApplvl, Path=SelectedItem}" />
+                    </Behaviors:EventTrigger>
+                </Behaviors:Interaction.Triggers>
+
             </ComboBox>
 
             <Button x:Name="saveData"
