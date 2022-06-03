@@ -15,6 +15,13 @@ namespace Profile_Editor.ViewModel
         MainViewModel mainViewModel;
         public ICommand LanguageChangeCommand { get; set; }
 
+        private int _Index;
+        public int Index
+        {
+            get { return _Index; }
+            set { _Index = value; OnPropertyChanged(nameof(Index)); }
+        }
+
         private UserSettingsStore _userSettingsStore;
         public UserSettingsStore UserSettingsStore
         {
@@ -30,9 +37,17 @@ namespace Profile_Editor.ViewModel
 
         public VViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
+            LanguageChangeCommand = new LanguageChangeCommand(userSettingsStore, this);
+
             UserSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
-            LanguageChangeCommand = new LanguageChangeCommand(userSettingsStore, this);
+
+            _userSettingsStore.UserSettingsCreated += RefreshView;
+        }
+
+        private void RefreshView(UserSettings settings)
+        {
+            Index = Convert.ToInt32(settings.Various[0].Language);
         }
     }
 }

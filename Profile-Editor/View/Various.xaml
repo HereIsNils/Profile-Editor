@@ -47,7 +47,8 @@
                       IsEditable="True"
                       IsReadOnly="True"
                       Margin="75 0 0 0"
-                      Text="Sprache">
+                      Text="Sprache"
+                      SelectedIndex="{Binding Index}">
 
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="SelectionChanged">
@@ -55,6 +56,7 @@
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
 
+                <ComboBoxItem Tag="0" Content="Keine Sprache"/>
                 <ComboBoxItem Tag="1" Content="Deutsch"/>
                 <ComboBoxItem Tag="2" Content="Englisch (UK)"/>
                 <ComboBoxItem Tag="3" Content="Französisch"/>
