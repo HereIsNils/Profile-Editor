@@ -30,6 +30,7 @@ namespace Profile_Editor.Commands
             string path = mainViewModel.CurrentPath;
             XmlSerializer writer = new XmlSerializer(typeof(UserSettings));
             
+            System.IO.File.WriteAllText(path, string.Empty);
             System.IO.FileStream file = System.IO.File.OpenWrite(path);
             writer.Serialize(file, userSettingsStore.userSettings);
             file.Close();
