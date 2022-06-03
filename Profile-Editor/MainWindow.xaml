@@ -21,9 +21,15 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <TextBlock Text="Applevel:"
+                       HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Margin="20 10 10 10"
+                       FontSize="20"
+                       Height="30" Width="Auto"/>
 
             <ComboBox Grid.Row="0"
-                      Margin="10 10 0 10"
+                      Margin="10 40 0 10"
+                      VerticalAlignment="Center"
                       IsEditable="True"
                       IsReadOnly="True"
                       FontSize="15"

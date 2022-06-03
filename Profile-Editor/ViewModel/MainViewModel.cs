@@ -149,9 +149,9 @@ namespace Profile_Editor.ViewModel
             {
                 AppLevels.Add(settings.AppLevelNames[0].AppLevelName[i].Value);
             }
-            AppLevels.Add("Manual");
-            AppLevels.Add("Endo");
-            AppLevels.Add("Chirogie");
+            AppLevels.Add("Manuell");
+            AppLevels.Add("Endodontie");
+            AppLevels.Add("Chirugie");
         }
     }
 }
