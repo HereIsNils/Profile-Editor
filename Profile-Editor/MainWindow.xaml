@@ -35,6 +35,7 @@
                       IsEditable="True"
                       IsReadOnly="True"
                       FontSize="15"
+                      SelectedIndex="{Binding AppLevelIndex}"
                       ItemsSource="{Binding AppLevels}"
                       IsEnabled="{Binding IsEnabled}">
 
