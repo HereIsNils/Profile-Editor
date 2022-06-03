@@ -120,6 +120,18 @@ namespace Profile_Editor.ViewModel
             Position4 = -1;
             Position5 = -1;
             Position6 = -1;
+
+            _userSettingsStore.UserSettingsCreated += RefreshView;
+        }
+
+        private void RefreshView(UserSettings settings)
+        {
+            Position1 = Convert.ToInt32(settings.SoftKeys[0].SoftKey1);
+            Position2 = Convert.ToInt32(settings.SoftKeys[0].SoftKey2);
+            Position3 = Convert.ToInt32(settings.SoftKeys[0].SoftKey3);
+            Position4 = Convert.ToInt32(settings.SoftKeys[0].SoftKey4);
+            Position5 = Convert.ToInt32(settings.SoftKeys[0].SoftKey5);
+            Position6 = Convert.ToInt32(settings.SoftKeys[0].SoftKey6);
         }
     }
 }
