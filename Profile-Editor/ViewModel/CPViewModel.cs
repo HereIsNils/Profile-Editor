@@ -3,8 +3,6 @@ using Profile_Editor.Commands.ChairPositionCommands;
 using Profile_Editor.Model;
 using Profile_Editor.Stores;
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Input;
 
 namespace Profile_Editor.ViewModel
@@ -13,7 +11,7 @@ namespace Profile_Editor.ViewModel
     {
         public MainViewModel viewModel;
         private int _position;
-       
+
         public ICommand CBPositionsChangedCommand { get; set; }
         public ICommand ChairHeightCommand { get; set; }
         public ICommand BackHeightCommand { get; set; }
@@ -111,18 +109,31 @@ namespace Profile_Editor.ViewModel
         public CPViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             CBPositionsChangedCommand = new CBPositionsChangedCommand(this, userSettingsStore);
-            ChairHeightCommand = new ChairHeightCommand(userSettingsStore, this, Position);
-            BackHeightCommand = new BackHeightCommand(userSettingsStore, this, Position);
-            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore, this, Position);
-            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, this, Position);
-            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, this, Position);
-            SeatTiltCommand = new SeatTiltCommand(userSettingsStore, this, Position);
+            ChairHeightCommand = new ChairHeightCommand(userSettingsStore, this);
+            BackHeightCommand = new BackHeightCommand(userSettingsStore, this);
+            HeadrestHeightCommand = new HeadrestHeightCommand(userSettingsStore, this);
+            HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, this);
+            SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, this);
+            SeatTiltCommand = new SeatTiltCommand(userSettingsStore, this);
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
+            _userSettingsStore.UserSettingsCreated += RefreshView;
 
             Position = -1;
 
+        }
+
+        private void RefreshView(UserSettings obj)
+        {
+            int i = Position;
+            if (i == -1) return;
+            Axis1 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis1);
+            Axis2 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis2);
+            Axis3 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis3);
+            Axis4 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis4);
+            Axis5 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis5);
+            Axis6 = Convert.ToDouble(obj.ChairPositions[0].ChairPosition[i].Axis6);
         }
     }
 }

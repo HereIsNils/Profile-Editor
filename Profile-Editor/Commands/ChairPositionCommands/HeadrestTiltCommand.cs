@@ -1,10 +1,6 @@
 ﻿using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Profile_Editor.Commands.ChairPositionCommands
@@ -14,13 +10,10 @@ namespace Profile_Editor.Commands.ChairPositionCommands
         private UserSettingsStore userSettingsStore { get; }
         public CPViewModel CPViewModel { get; }
 
-        private int i;
-
-        public HeadrestTiltCommand(UserSettingsStore userSettingsStore, CPViewModel cPViewModel, int i)
+        public HeadrestTiltCommand(UserSettingsStore userSettingsStore, CPViewModel cPViewModel)
         {
             this.userSettingsStore = userSettingsStore;
             CPViewModel = cPViewModel;
-            this.i = i;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -32,7 +25,7 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[i].Axis5 = CPViewModel.Axis5.ToString();
+            userSettingsStore.userSettings.ChairPositions[0].ChairPosition[Convert.ToInt32(parameter)].Axis5 = CPViewModel.Axis5.ToString();
         }
     }
 }
