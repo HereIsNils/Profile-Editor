@@ -13,6 +13,7 @@ namespace Profile_Editor.ViewModel
     internal class IViewModel : BaseViewModel
     {
         private UserSettingsStore _userSettingsStore;
+        private MainViewModel _mainViewModel;
 
         public UserSettingsStore UserSettingsStore
         {
@@ -66,11 +67,11 @@ namespace Profile_Editor.ViewModel
             set { _SCenterValue = value; OnPropertyChanged(nameof(SCenterValue)); }
         } // value of pedal slider
 
-        private int _RotationIndex;
-        public int RotationIndex
+        private int _RotationTag;
+        public int RotationTag
         {
-            get { return _RotationIndex; }
-            private set { _RotationIndex = value; OnPropertyChanged(nameof(RotationIndex)); }
+            get { return _RotationTag; }
+            private set { _RotationTag = value; OnPropertyChanged(nameof(RotationTag)); }
         }
 
         private int _AuxIndex;
@@ -132,25 +133,25 @@ namespace Profile_Editor.ViewModel
 
         #region States
 
-        private bool _RadioGridState;
-        public bool RadioGridState
+        private bool _RadioGridEnabled;
+        public bool RadioGridEnabled
         {
-            get { return _RadioGridState; }
-            set { _RadioGridState = value; OnPropertyChanged(nameof(RadioGridState)); }
+            get { return _RadioGridEnabled; }
+            set { _RadioGridEnabled = value; OnPropertyChanged(nameof(RadioGridEnabled)); }
         } // state for the grid with all radio buttons
 
-        private bool _NaclButtonState;
-        public bool NaclButtonState
+        private bool _NaclButtonEnabled;
+        public bool NaclButtonEnabled
         {
-            get { return _NaclButtonState; }
-            set { _NaclButtonState = value; OnPropertyChanged(nameof(NaclButtonState)); }
+            get { return _NaclButtonEnabled; }
+            set { _NaclButtonEnabled = value; OnPropertyChanged(nameof(NaclButtonEnabled)); }
         } // state for the NaCl radio button
 
-        private bool _LuxLevelState;
-        public bool LuxLevelState
+        private bool _LuxLevelEnabled;
+        public bool LuxLevelEnabled
         {
-            get { return _LuxLevelState; }
-            set { _LuxLevelState = value; OnPropertyChanged(nameof(LuxLevelState)); }
+            get { return _LuxLevelEnabled; }
+            set { _LuxLevelEnabled = value; OnPropertyChanged(nameof(LuxLevelEnabled)); }
         }
         #endregion States
 
@@ -168,7 +169,51 @@ namespace Profile_Editor.ViewModel
             _userSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
 
-            //_userSettingsStore.Cret
+            _userSettingsStore.UserSettingsCreated += RefreshView;
+        }
+
+        private void RefreshView(UserSettings obj)
+        {
+            AppLevel = obj.AppLevelNames[0].AppLevelName[AppLevelIndex].Value;
+            Instrument instrument = GetLevel(obj);
+            SCenterValue = Convert.ToInt32(instrument.Center);
+            RotationTag = Convert.ToInt32(instrument.Rotation);
+            AuxIndex = Convert.ToInt32(instrument.Auxilliary);
+            SetLuxLevel(instrument.Lux);
+
+        }
+
+        private Instrument GetLevel(UserSettings obj)
+        {
+            // needs to be converted, since there is no applevel 0
+            int iA = AppLevelIndex + 1;
+            string iAString = iA.ToString();
+
+            // needs to be converted since there is no holder 0
+            int iH = HolderIndex + 1;
+            string iHString = iH.ToString();
+
+            Instrument instrument = obj.Instruments[0].Instrument.First(x => x.AppLevel == iAString && x.Holder == iHString.ToString());
+            return instrument;
+        }
+
+        private void SetLuxLevel(string lux)
+        {
+            string hex = StringToHex(lux);
+
+            if (hex == "12") return; // lux off and level 1
+            LuxLevel = Convert.ToInt32(hex[0]);
+
+            if(hex[1] == 2) return; // lux off
+            LuxLevelEnabled = true;
+            LuxState = true;
+        }
+
+        private string StringToHex(string s)
+        {
+            int i = Convert.ToInt32(s);
+            string hex = i.ToString("x2");
+            return hex;
         }
     }
 }

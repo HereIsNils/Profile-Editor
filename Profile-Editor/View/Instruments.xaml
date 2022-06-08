@@ -110,7 +110,8 @@
                      Margin="80 0 0 0"
                      IsEditable="True"
                      IsReadOnly="True"
-                     SelectedIndex="{Binding Rotation}">
+                     SelectedValue="{Binding Rotation}"
+                     SelectedValuePath="Tag">
 
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="SelectionChanged">
@@ -193,7 +194,7 @@
                         Maximum="9" Minimum="1"
                         TickFrequency="1"
                         IsSnapToTickEnabled="True"
-                        IsEnabled="{Binding LuxLevelState}"
+                        IsEnabled="{Binding LuxLevelEnabled}"
                         ToolTip="{Binding ElementName=sLux, Path=Value, UpdateSourceTrigger=PropertyChanged}"
                         Value="{Binding LuxLevel}"/>
 
@@ -211,7 +212,7 @@
                     </Behaviors:Interaction.Triggers>
                 </CheckBox>
 
-                <Grid Grid.Row="2" Grid.Column="0" IsEnabled="{Binding RadioGridState}">
+                <Grid Grid.Row="2" Grid.Column="0" IsEnabled="{Binding RadioGridEnabled}">
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -238,7 +239,7 @@
                                  Grid.Column="1" Grid.Row="0"
                                   Margin="10" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"
-                                 IsEnabled="{Binding NaclButtonState}"
+                                 IsEnabled="{Binding NaclButtonEnabled}"
                                  IsChecked="{Binding Naclcooling}">
                         <Behaviors:Interaction.Triggers>
                             <Behaviors:EventTrigger EventName="Click">
