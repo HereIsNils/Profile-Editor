@@ -73,11 +73,11 @@ namespace Profile_Editor.ViewModel
         public string CurrentPath
         {
             get { return _CurrentPath; }
-            set { _CurrentPath = value; OnPropertyChanged(nameof(CurrentPath));}
+            set { _CurrentPath = value; OnPropertyChanged(nameof(CurrentPath)); }
         }
 
         private List<string> _AppLevels;
-        public List<string> AppLevels 
+        public List<string> AppLevels
         {
             get { return _AppLevels; }
             set { _AppLevels = value; OnPropertyChanged(nameof(AppLevels)); }
@@ -142,19 +142,23 @@ namespace Profile_Editor.ViewModel
             DefaultPath = Settings1.Default.defaultPath;
             if (DefaultPath == null)
             {
-                return; 
+                return;
             }
             string path = DefaultPath;
-            XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
-            using (FileStream fs = new FileStream(path, FileMode.Open))
+            if (File.Exists(path))
             {
-                if (fs == null | serializer == null) return;
-                UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
+                XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
+                using (FileStream fs = new FileStream(path, FileMode.Open))
+                {
+                    if (fs == null | serializer == null) return;
+                    UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
 
-                if (userSettings == null) return;
-                _userSettingsStore.CreateUserSettings(userSettings);
-                IsEnabled = true;
+                    if (userSettings == null) return;
+                    _userSettingsStore.CreateUserSettings(userSettings);
+                    IsEnabled = true;
+                }
             }
+            else return;
         }
 
         private void RefreshAppLvl(UserSettings settings)
