@@ -129,7 +129,7 @@
             <!--instrument type E-motor-->
             <InstrumentType>8</InstrumentType>
             <!--slider center value-->
-            <Center>128</Center>
+            <Center>50</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>
             <!--coolmode NaCl disabled, mode off (0x11)-->
@@ -147,7 +147,7 @@
             <!--instrument type E-motor-->
             <InstrumentType>8</InstrumentType>
             <!--slider center value-->
-            <Center>128</Center>
+            <Center>10</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>
             <!--coolmode NaCl disabled, mode off (0x11)-->
@@ -165,7 +165,7 @@
             <!--instrument type Syringe-->
             <InstrumentType>5</InstrumentType>
             <!--slider center value-->
-            <Center>128</Center>
+            <Center>0</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>
             <!--coolmode NaCl disabled, mode off (0x11)-->
@@ -183,7 +183,7 @@
             <!--instrument type Scaler-->
             <InstrumentType>6</InstrumentType>
             <!--slider center value-->
-            <Center>128</Center>
+            <Center>100</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>
             <!--coolmode NaCl disabled, mode off (0x11)-->
@@ -201,7 +201,7 @@
             <!--instrument type Unused-->
             <InstrumentType>0</InstrumentType>
             <!--slider center value-->
-            <Center>128</Center>
+            <Center>70</Center>
             <!--rotation direction clockwise-->
             <Rotation>1</Rotation>
             <!--coolmode NaCl disabled, mode off (0x11)-->

@@ -29,8 +29,7 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public void Execute(object? parameter)
         {
-            int i = viewModel.HolderIndex;
-            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[i].Center = parameter.ToString();
+            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[viewModel.HolderIndex].Center = parameter.ToString();
         }
     }
 }

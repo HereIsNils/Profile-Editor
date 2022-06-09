@@ -157,7 +157,7 @@ namespace Profile_Editor.ViewModel
 
         public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
-            AppLevelCommand = new AppLevelCommand(this);
+            AppLevelCommand = new AppLevelCommand(this); // aorn not needed
             HolderChangedCommand = new HolderChangedCommand(this);
             SCenterValueChangedCommand = new SCenterValueChangedCommand(userSettingsStore, this);
             RotationChangedCommand = new RotationChangedCommand(userSettingsStore, this);
@@ -172,7 +172,7 @@ namespace Profile_Editor.ViewModel
             _userSettingsStore.UserSettingsCreated += RefreshView;
         }
 
-        private void RefreshView(UserSettings obj)
+        public void RefreshView(UserSettings obj)
         {
             AppLevel = obj.AppLevelNames[0].AppLevelName[AppLevelIndex].Value;
             Instrument instrument = GetLevel(obj);
@@ -180,7 +180,41 @@ namespace Profile_Editor.ViewModel
             RotationTag = Convert.ToInt32(instrument.Rotation);
             AuxIndex = Convert.ToInt32(instrument.Auxilliary);
             SetLuxLevel(instrument.Lux);
+            SetCoolantMode(instrument.CoolantMode);
+        }
 
+        private void SetCoolantMode(string coolantMode)
+        {
+            string hex = StringToHex(coolantMode);
+            if (hex == "11") return; // ancl and mode off
+            if(hex[1] == '2')
+            {
+                RadioGridEnabled = true;
+            }
+
+            if (hex[0] == '2')
+            {
+                NaclButtonEnabled = true;
+            } else
+            {
+                NaclButtonEnabled = false;
+            }
+
+            switch (hex[1])
+            {
+                case '2':
+                    Aircooling = true;
+                    break;
+                case '3':
+                    AirWatercooling = true;
+                    break;
+                case '4':
+                    Naclcooling = true;
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         private Instrument GetLevel(UserSettings obj)
@@ -193,7 +227,7 @@ namespace Profile_Editor.ViewModel
             int iH = HolderIndex + 1;
             string iHString = iH.ToString();
 
-            Instrument instrument = obj.Instruments[0].Instrument.First(x => x.AppLevel == iAString && x.Holder == iHString.ToString());
+            Instrument instrument = obj.Instruments[0].Instrument.First(x => x.AppLevel == iAString && x.Holder == iHString);
             return instrument;
         }
 

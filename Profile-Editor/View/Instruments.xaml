@@ -166,21 +166,16 @@
                           Grid.Column="0" Grid.Row="0" 
                           HorizontalAlignment="Left" VerticalAlignment="Center"
                           Margin="10"
-                          IsChecked="{Binding CoolantState}">
-
-                    <Behaviors:Interaction.Triggers>
-                        <Behaviors:EventTrigger EventName="Click">
-                            <Behaviors:InvokeCommandAction Command="{Binding CoolantModeChangedCommand}"/>
-                        </Behaviors:EventTrigger>
-                    </Behaviors:Interaction.Triggers>
-                </CheckBox>
+                          IsChecked="{Binding CoolantState}"
+                          Command="{Binding CoolantModeChangedCommand}"/>
 
                 <CheckBox x:Name="cbLux" 
                           Content="Helligkeit" FontSize="15" 
                           Grid.Column="1" Grid.Row="0" 
                           HorizontalAlignment="Right" VerticalAlignment="Center"
                           Margin="0 0 75 0"
-                          IsChecked="{Binding LuxState}"/>
+                          IsChecked="{Binding LuxState}"
+                          Command="{Binding LuxStateChangedCommand}"/>
 
                 <TextBlock Text="Level:" FontSize="15"
                            Grid.Column="1" Grid.Row="1"
@@ -196,7 +191,13 @@
                         IsSnapToTickEnabled="True"
                         IsEnabled="{Binding LuxLevelEnabled}"
                         ToolTip="{Binding ElementName=sLux, Path=Value, UpdateSourceTrigger=PropertyChanged}"
-                        Value="{Binding LuxLevel}"/>
+                        Value="{Binding LuxLevel}">
+                    <Behaviors:Interaction.Triggers>
+                        <Behaviors:EventTrigger EventName="ValueChanged">
+                            <Behaviors:InvokeCommandAction Command="{Binding LuxStateChangedCommand}"/>
+                        </Behaviors:EventTrigger>
+                    </Behaviors:Interaction.Triggers>
+                </Slider>
 
                 <CheckBox x:Name="cbNacl"
                           Content="NaCl aktiv" FontSize="15"
@@ -227,38 +228,23 @@
                                  Grid.Column="0" Grid.Row="0" 
                                  Margin="10" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"
-                                 IsChecked="{Binding Aircooling}">
-                        <Behaviors:Interaction.Triggers>
-                            <Behaviors:EventTrigger EventName="Click">
-                                <Behaviors:InvokeCommandAction Command="{Binding CoolantModeChangedCommand}"/>
-                            </Behaviors:EventTrigger>
-                        </Behaviors:Interaction.Triggers>
-                    </RadioButton>
+                                 IsChecked="{Binding Aircooling}"
+                                 Command="{Binding CoolantModeChangedCommand}"/>
 
                     <RadioButton Content="NaCl" FontSize="15"
                                  Grid.Column="1" Grid.Row="0"
                                   Margin="10" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"
                                  IsEnabled="{Binding NaclButtonEnabled}"
-                                 IsChecked="{Binding Naclcooling}">
-                        <Behaviors:Interaction.Triggers>
-                            <Behaviors:EventTrigger EventName="Click">
-                                <Behaviors:InvokeCommandAction Command="{Binding CoolantModeChangedCommand}"/>
-                            </Behaviors:EventTrigger>
-                        </Behaviors:Interaction.Triggers>
-                    </RadioButton>
+                                 IsChecked="{Binding Naclcooling}"
+                                 Command="{Binding CoolantModeChangedCommand}"/>
 
                     <RadioButton Content="Luft und Wasser" FontSize="15"
                                  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  
                                  Margin="10 0 0 0" 
                                  VerticalAlignment="Center" HorizontalAlignment="Left"
-                                 IsChecked="{Binding AirWaterCooling}">
-                        <Behaviors:Interaction.Triggers>
-                            <Behaviors:EventTrigger EventName="Click">
-                                <Behaviors:InvokeCommandAction Command="{Binding CoolantModeChangedCommand}"/>
-                            </Behaviors:EventTrigger>
-                        </Behaviors:Interaction.Triggers>
-                    </RadioButton>
+                                 IsChecked="{Binding AirWaterCooling}"
+                                 Command="{Binding CoolantModeChangedCommand}"/>
 
                 </Grid>
 

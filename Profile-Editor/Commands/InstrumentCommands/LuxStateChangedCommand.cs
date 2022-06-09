@@ -24,12 +24,44 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            string lux = GetLux();
+            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[viewModel.HolderIndex].Lux = lux;
+        }
+
+        private string GetLux()
+        {
+            string lux = "11"; // level 1, lux off
+
+            string level = viewModel.LuxLevel.ToString();
+
+            if(viewModel.LuxState == true)
+            {
+                lux = $"2{level}";
+            }
+            else
+            {
+                lux = $"1{level}";
+                viewModel.LuxLevelEnabled = false;
+            }
+
+            string luxConverted = ConvertByteToDecString(Convert.ToByte(lux));
+            return luxConverted;
+        }
+
+        /// <summary>
+        /// Takes a byte, converts it to an integer and returns it as string
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        private string ConvertByteToDecString(byte mode)
+        {
+            int value = (Int32)mode;
+            return value.ToString();
         }
     }
 }
