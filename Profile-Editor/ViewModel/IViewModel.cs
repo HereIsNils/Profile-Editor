@@ -35,7 +35,6 @@ namespace Profile_Editor.ViewModel
         public ICommand AuxChangedCommand { get; set; }
         public ICommand CoolantModeChangedCommand { get; set; }
         public ICommand LuxStateChangedCommand { get; set; }
-        public ICommand LuxLevelChangedCommand { get; set; }
         #endregion Commands
 
         #region IViewModel Members
@@ -71,7 +70,7 @@ namespace Profile_Editor.ViewModel
         public int RotationTag
         {
             get { return _RotationTag; }
-            private set { _RotationTag = value; OnPropertyChanged(nameof(RotationTag)); }
+            set { _RotationTag = value; OnPropertyChanged(nameof(RotationTag)); }
         }
 
         private int _AuxIndex;
@@ -164,7 +163,6 @@ namespace Profile_Editor.ViewModel
             AuxChangedCommand = new AuxChangedCommand(userSettingsStore, this);
             CoolantModeChangedCommand = new CoolantModeChangedCommand(userSettingsStore, this);
             LuxStateChangedCommand = new LuxStateChangedCommand(userSettingsStore, this);
-            LuxLevelChangedCommand = new LuxLevelChangedCommand(userSettingsStore, this);
 
             _userSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
@@ -217,7 +215,7 @@ namespace Profile_Editor.ViewModel
             }
         }
 
-        private Instrument GetLevel(UserSettings obj)
+        public Instrument GetLevel(UserSettings obj)
         {
             // needs to be converted, since there is no applevel 0
             int iA = AppLevelIndex + 1;

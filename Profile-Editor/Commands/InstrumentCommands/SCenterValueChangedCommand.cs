@@ -1,4 +1,5 @@
-﻿using Profile_Editor.Stores;
+﻿using Profile_Editor.Model;
+using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public void Execute(object? parameter)
         {
-            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[viewModel.HolderIndex].Center = parameter.ToString();
+            Instrument instrument = viewModel.GetLevel(userSettingsStore.userSettings);
+            instrument.Center = viewModel.SCenterValue.ToString();
         }
     }
 }

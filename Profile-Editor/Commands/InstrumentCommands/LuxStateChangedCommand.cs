@@ -1,4 +1,5 @@
-﻿using Profile_Editor.Stores;
+﻿using Profile_Editor.Model;
+using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,8 @@ namespace Profile_Editor.Commands.InstrumentCommands
         public void Execute(object? parameter)
         {
             string lux = GetLux();
-            userSettingsStore.userSettings.Instruments[viewModel.AppLevelIndex].Instrument[viewModel.HolderIndex].Lux = lux;
+            Instrument instrument = viewModel.GetLevel(userSettingsStore.userSettings);
+            instrument.Lux = lux;
         }
 
         private string GetLux()

@@ -115,7 +115,7 @@ namespace Profile_Editor.ViewModel
             VViewModel vViewModel,
             UserSettingsStore userSettingsStore)
         {
-            AppLevelChangedCommand = new AppLevelChangedCommand(iViewModel, this);
+            AppLevelChangedCommand = new AppLevelChangedCommand(iViewModel, userSettingsStore, this);
             ImportXmlCommand = new ImportXmlCommand(userSettingsStore, this);
             DefaultFileCommand = new DefaultFileCommand(userSettingsStore, this);
             SaveDataAsCommand = new SaveDataAsCommand(userSettingsStore, this);
@@ -168,9 +168,6 @@ namespace Profile_Editor.ViewModel
             {
                 AppLevels.Add(settings.AppLevelNames[0].AppLevelName[i].Value);
             }
-            AppLevels.Add("Manuell");
-            AppLevels.Add("Endodontie");
-            AppLevels.Add("Chirugie");
         }
     }
 }

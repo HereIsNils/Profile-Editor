@@ -1,4 +1,5 @@
-﻿using Profile_Editor.ViewModel;
+﻿using Profile_Editor.Stores;
+using Profile_Editor.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace Profile_Editor.Commands
     internal class AppLevelChangedCommand : ICommand
     {
         private IViewModel iViewModel;
+        private UserSettingsStore userSettingsStore;
         private MainViewModel mainViewModel;
 
-        public AppLevelChangedCommand(IViewModel iViewModel, MainViewModel mainViewModel)
+        public AppLevelChangedCommand(IViewModel iViewModel, UserSettingsStore userSettingsStore, MainViewModel mainViewModel)
         {
             this.iViewModel = iViewModel;
+            this.userSettingsStore = userSettingsStore;
             this.mainViewModel = mainViewModel;
         }
 
@@ -30,6 +33,7 @@ namespace Profile_Editor.Commands
         {
             iViewModel.AppLevel = parameter.ToString();
             iViewModel.AppLevelIndex = mainViewModel.AppLevelIndex;
+            iViewModel.RefreshView(userSettingsStore.userSettings);
         }
     }
 }
