@@ -3,6 +3,7 @@ using Profile_Editor.Model;
 using Profile_Editor.Stores;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Windows.Input;
 using System.Xml.Serialization;
 
@@ -151,7 +152,8 @@ namespace Profile_Editor.ViewModel
                 using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
                     if (fs == null | serializer == null) return;
-                    UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
+                    StreamReader stream = new StreamReader(fs, Encoding.UTF8);
+                    UserSettings userSettings = (UserSettings)serializer.Deserialize(stream);
 
                     if (userSettings == null) return;
                     _userSettingsStore.CreateUserSettings(userSettings);
