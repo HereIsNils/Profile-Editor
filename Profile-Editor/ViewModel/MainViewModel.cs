@@ -63,13 +63,6 @@ namespace Profile_Editor.ViewModel
             set { _VViewModel = value; OnPropertyChanged(nameof(VViewModel)); }
         }
 
-        private string _DefaultPath;
-        public string DefaultPath
-        {
-            get { return _DefaultPath; }
-            set { _DefaultPath = value; OnPropertyChanged(nameof(DefaultPath)); }
-        }
-
         private string _CurrentPath;
         public string CurrentPath
         {
@@ -140,12 +133,12 @@ namespace Profile_Editor.ViewModel
 
         private void fillView()
         {
-            DefaultPath = Settings1.Default.defaultPath;
-            if (DefaultPath == null)
+            CurrentPath = Settings1.Default.defaultPath;
+            if (CurrentPath == null)
             {
                 return;
             }
-            string path = DefaultPath;
+            string path = CurrentPath;
             if (File.Exists(path))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(UserSettings));
