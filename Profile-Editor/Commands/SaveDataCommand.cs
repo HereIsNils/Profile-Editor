@@ -2,7 +2,11 @@
 using Profile_Editor.Stores;
 using Profile_Editor.ViewModel;
 using System;
+using System.IO;
+using System.Text;
 using System.Windows.Input;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Profile_Editor.Commands
@@ -15,7 +19,7 @@ namespace Profile_Editor.Commands
         public SaveDataCommand(UserSettingsStore userSettingsStore, MainViewModel mainViewModel)
         {
             this.userSettingsStore = userSettingsStore;
-            this.mainViewModel=mainViewModel;
+            this.mainViewModel = mainViewModel;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -27,13 +31,39 @@ namespace Profile_Editor.Commands
 
         public void Execute(object? parameter)
         {
+            string xmlString;
             string path = mainViewModel.CurrentPath;
             XmlSerializer writer = new XmlSerializer(typeof(UserSettings));
-            
-            System.IO.File.WriteAllText(path, string.Empty);
-            System.IO.FileStream file = System.IO.File.OpenWrite(path);
-            writer.Serialize(file, userSettingsStore.userSettings);
+            StringWriter sw = new StringWriter();
+
+            writer.Serialize(sw, userSettingsStore.userSettings);
+            xmlString = sw.ToString();
+
+            string xmlFormatted = PrettyXml(xmlString);
+
+
+            FileStream file = File.OpenWrite(path);
+            writer.Serialize(file, xmlFormatted);
             file.Close();
+        }
+
+        private string PrettyXml(string xml)
+        {
+            var stringBuilder = new StringBuilder();
+
+            var element = XElement.Parse(xml);
+
+            var settings = new XmlWriterSettings();
+            settings.OmitXmlDeclaration = true;
+            settings.Indent = true;
+            settings.NewLineOnAttributes = true;
+
+            using (var xmlWriter = XmlWriter.Create(stringBuilder, settings))
+            {
+                element.Save(xmlWriter);
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

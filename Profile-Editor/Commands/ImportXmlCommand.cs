@@ -64,7 +64,8 @@ namespace Profile_Editor.Commands
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
                 if (fs == null | serializer == null) return;
-                UserSettings userSettings = (UserSettings)serializer.Deserialize(fs);
+                StreamReader stream = new StreamReader(fs, Encoding.UTF8);
+                UserSettings userSettings = (UserSettings)serializer.Deserialize(stream);
 
                 if(userSettings == null) return;
                 _userSettingsStore.CreateUserSettings(userSettings);
