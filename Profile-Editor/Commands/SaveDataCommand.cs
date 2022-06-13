@@ -34,36 +34,63 @@ namespace Profile_Editor.Commands
             string xmlString;
             string path = mainViewModel.CurrentPath;
             XmlSerializer writer = new XmlSerializer(typeof(UserSettings));
+            FileStream fs = null;
             StringWriter sw = new StringWriter();
+
+            File.WriteAllText(path, String.Empty);
 
             writer.Serialize(sw, userSettingsStore.userSettings);
             xmlString = sw.ToString();
 
             string xmlFormatted = PrettyXml(xmlString);
 
-
-            FileStream file = File.OpenWrite(path);
-            writer.Serialize(file, xmlFormatted);
-            file.Close();
+            fs = new FileStream(path, FileMode.Append);
+            StreamWriter stream = new StreamWriter(fs);
+            stream.Write(xmlFormatted);
+            stream.Close();
         }
 
         private string PrettyXml(string xml)
         {
-            var stringBuilder = new StringBuilder();
+            string result = "";
 
-            var element = XElement.Parse(xml);
+            MemoryStream mStream = new MemoryStream();
+            XmlTextWriter writer = new XmlTextWriter(mStream, Encoding.Unicode);
+            XmlDocument document = new XmlDocument();
 
-            var settings = new XmlWriterSettings();
-            settings.OmitXmlDeclaration = true;
-            settings.Indent = true;
-            settings.NewLineOnAttributes = true;
-
-            using (var xmlWriter = XmlWriter.Create(stringBuilder, settings))
+            try
             {
-                element.Save(xmlWriter);
+                // Load the XmlDocument with the XML.
+                document.LoadXml(xml);
+
+                writer.Formatting = Formatting.Indented;
+
+                // Write the XML into a formatting XmlTextWriter
+                document.WriteContentTo(writer);
+                writer.Flush();
+                mStream.Flush();
+
+                // Have to rewind the MemoryStream in order to read
+                // its contents.
+                mStream.Position = 0;
+
+                // Read MemoryStream contents into a StreamReader.
+                StreamReader sReader = new StreamReader(mStream);
+
+                // Extract the text from the StreamReader.
+                string formattedXml = sReader.ReadToEnd();
+
+                result = formattedXml;
+            }
+            catch (XmlException)
+            {
+                // Handle the exception
             }
 
-            return stringBuilder.ToString();
+            mStream.Close();
+            writer.Close();
+
+            return result;
         }
     }
 }
