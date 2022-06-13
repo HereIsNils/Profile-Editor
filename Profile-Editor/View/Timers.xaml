@@ -30,6 +30,7 @@
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -37,8 +38,27 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!--#region row 1-->
             <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="1"
+                           FontSize="15"
+                           Text="Minute"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <TextBlock Grid.Column="2"
+                           FontSize="15"
+                           Text="Sekunde"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10 0 0 0"/>
+            </Grid>
+
+            <!--#region row 1-->
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
@@ -95,7 +115,7 @@
             <!--#endregion row 1-->
             
             <!--#region row 2-->
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
@@ -139,7 +159,7 @@
             <!--#endregion row 2-->
 
             <!--#region row 3-->
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
@@ -183,7 +203,7 @@
             <!--#endregion row 3-->
 
             <!--#region row 4-->
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
@@ -227,7 +247,7 @@
             <!--#endregion row 4-->
 
             <!--#region row 5-->
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
