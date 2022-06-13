@@ -27,7 +27,7 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public void Execute(object? parameter)
         {
-            //viewModel.HolderIndex = Convert.ToInt32(parameter);
+            viewModel.HolderTag = Convert.ToInt32(parameter);
             viewModel.RefreshView(viewModel.UserSettingsStore.userSettings);
         }
     }

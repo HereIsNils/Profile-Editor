@@ -45,6 +45,12 @@ namespace Profile_Editor.ViewModel
             set { _HolderIndex = value; OnPropertyChanged(nameof(HolderIndex)); }
         } // sets the index for the holder to be configured
 
+        private int _HolderTag;
+        public int HolderTag
+        {
+            get { return _HolderTag; }
+            set { _HolderTag = value; OnPropertyChanged(nameof(HolderTag)); }
+        } // currently selected Tag of the holder
         private string _AppLevel;
         public string AppLevel
         {
@@ -221,11 +227,9 @@ namespace Profile_Editor.ViewModel
             int iA = AppLevelIndex + 1;
             string iAString = iA.ToString();
 
-            // needs to be converted since there is no holder 0
-            int iH = HolderIndex + 1;
-            string iHString = iH.ToString();
+            if (HolderTag == 0) HolderTag = 1;
 
-            Instrument instrument = obj.Instruments[0].Instrument.First(x => x.AppLevel == iAString && x.Holder == iHString);
+            Instrument instrument = obj.Instruments[0].Instrument.First(x => x.AppLevel == iAString && x.Holder == HolderTag.ToString());
             return instrument;
         }
 
@@ -234,7 +238,7 @@ namespace Profile_Editor.ViewModel
             string hex = StringToHex(lux);
 
             if (hex == "12") return; // lux off and level 1
-            LuxLevel = Convert.ToInt32(hex[0]);
+            LuxLevel = hex[0]; // bitshift
 
             if(hex[1] == 2) return; // lux off
             LuxLevelEnabled = true;
