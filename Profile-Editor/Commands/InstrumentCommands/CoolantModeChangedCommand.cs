@@ -48,47 +48,36 @@ namespace Profile_Editor.Commands.InstrumentCommands
                     if (viewModel.Aircooling)
                     {
                         mode = 0x22;
-                        return ConvertByteToDecString(mode);
+                        return mode.ToString();
                     }
                     if (viewModel.AirWatercooling)
                     {
                         mode = 0x23;
-                        return ConvertByteToDecString(mode);
+                        return mode.ToString();
                     }
                     if (viewModel.Naclcooling)
                     {
                         mode = 0x24;
-                        return ConvertByteToDecString(mode);
+                        return mode.ToString();
                     }
                 }
                 mode = 0x21;
-                return ConvertByteToDecString(mode);
+                return mode.ToString();
             }
             else if (viewModel.CoolantState)
             {
                 if (viewModel.Aircooling)
                 {
                     mode = 0x12;
-                    return ConvertByteToDecString(mode);
+                    return mode.ToString();
                 }
                 if (viewModel.AirWatercooling)
                 {
                     mode = 0x13;
-                    return ConvertByteToDecString(mode);
+                    return mode.ToString();
                 }
             }
-            return ConvertByteToDecString(mode);
-        }
-
-        /// <summary>
-        /// Takes a byte, converts it to an integer and returns it as string
-        /// </summary>
-        /// <param name="mode"></param>
-        /// <returns></returns>
-        private string ConvertByteToDecString(byte mode)
-        {
-            int value = (Int32)mode;
-            return value.ToString();
+            return mode.ToString();
         }
 
         private void SetStates()
