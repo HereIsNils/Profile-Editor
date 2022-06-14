@@ -140,7 +140,7 @@
 
                 <Behaviors:Interaction.Triggers>
                     <Behaviors:EventTrigger EventName="SelectionChanged">
-                        <Behaviors:InvokeCommandAction Command="{Binding RotationChangedCommand}" CommandParameter="{Binding ElementName=cbRotation, Path=SelectedItem.Tag}" />
+                        <Behaviors:InvokeCommandAction Command="{Binding AuxChangedCommand}" CommandParameter="{Binding ElementName=cbRotation, Path=SelectedItem.Tag}" />
                     </Behaviors:EventTrigger>
                 </Behaviors:Interaction.Triggers>
 
