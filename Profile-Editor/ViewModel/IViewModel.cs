@@ -189,14 +189,18 @@ namespace Profile_Editor.ViewModel
 
         private void SetCoolantMode(string coolantMode)
         {
-            string hex = StringToHex(coolantMode);
+            string hex = ToHex(coolantMode);
+            int i = Convert.ToInt32(coolantMode);
+            int i0 = i >> 4;
+            string coolMode = hex.Substring(1, 1);
+
             if (hex == "11") return; // ancl and mode off
-            if(hex[1] == '2')
+            if(coolMode == "2")
             {
                 RadioGridEnabled = true;
             }
 
-            if (hex[0] == '2')
+            if (i0 == 2)
             {
                 NaclButtonEnabled = true;
             } else
@@ -204,15 +208,15 @@ namespace Profile_Editor.ViewModel
                 NaclButtonEnabled = false;
             }
 
-            switch (hex[1])
+            switch (coolMode)
             {
-                case '2':
+                case "2":
                     Aircooling = true;
                     break;
-                case '3':
+                case "3":
                     AirWatercooling = true;
                     break;
-                case '4':
+                case "4":
                     Naclcooling = true;
                     break;
 
@@ -235,17 +239,20 @@ namespace Profile_Editor.ViewModel
 
         private void SetLuxLevel(string lux)
         {
-            string hex = StringToHex(lux);
+            string hex = ToHex(lux);
+            int i = Convert.ToInt32(lux);
 
             if (hex == "12") return; // lux off and level 1
-            LuxLevel = hex[0]; // bitshift
+            int i0 = i >> 4;
+            string hexState = hex.Substring(1, 1);
+            LuxLevel = i0;
 
-            if(hex[1] == 2) return; // lux off
+           if(hexState == "2") return; // lux off
             LuxLevelEnabled = true;
             LuxState = true;
         }
 
-        private string StringToHex(string s)
+        private string ToHex(string s)
         {
             int i = Convert.ToInt32(s);
             string hex = i.ToString("x2");
