@@ -198,6 +198,7 @@ namespace Profile_Editor.ViewModel
             {
                 Naclcooling = false;
                 NaclButtonEnabled = false;
+                NaclState = false;
 
                 CoolantState = false;
                 RadioGridEnabled = false;
@@ -205,20 +206,30 @@ namespace Profile_Editor.ViewModel
                 Aircooling = false;
                 AirWatercooling = false;
                 
-                return; // ancl and mode off
+                return; // nacl and mode off
             } 
 
             if (i0 == 2)
             {
                 Naclcooling = true;
                 NaclButtonEnabled = true;
+                NaclState = true;
             } else
             {
                 Naclcooling = false;
                 NaclButtonEnabled = false;
+                NaclState = false;
             }
 
-            if (coolMode == "1") return;
+            if (coolMode == "1")
+            {
+                CoolantState = false;
+                RadioGridEnabled = false;
+
+                Aircooling = false;
+                AirWatercooling = false;
+                return;
+            }
             
             CoolantState = true;
             RadioGridEnabled = true;
