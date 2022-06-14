@@ -197,11 +197,13 @@ namespace Profile_Editor.ViewModel
             if (hex == "11") return; // ancl and mode off
             if(coolMode == "2")
             {
+                CoolantState = true;
                 RadioGridEnabled = true;
             }
 
             if (i0 == 2)
             {
+                Naclcooling = true;
                 NaclButtonEnabled = true;
             } else
             {
