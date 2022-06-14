@@ -34,7 +34,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="45"/>
                 <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
+                <RowDefinition Height="90"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -99,15 +99,15 @@
 
             <TextBlock Text="Rotation:" FontSize="15" 
                        Grid.Row="2" 
-                       VerticalAlignment="Center" HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" HorizontalAlignment="Left" 
                        Margin="10"/>
 
             <ComboBox x:Name="cbRotation"
                      Grid.Row="2"
                      FontSize="15"
-                     Width="166"
-                     VerticalAlignment="Center" HorizontalAlignment="Left"
-                     Margin="80 0 0 0"
+                     Width="200"
+                     VerticalAlignment="Top" HorizontalAlignment="Left"
+                     Margin="80 10 0 0"
                      IsEditable="True"
                      IsReadOnly="True"
                      SelectedValue="{Binding RotationTag}"
@@ -125,15 +125,15 @@
 
             <TextBlock Text="Beschleunigung:" FontSize="15" 
                        Grid.Row="2" 
-                       VerticalAlignment="Center" HorizontalAlignment="Right" 
-                       Margin="0 0 53 0"/>
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+                       Margin="10 15"/>
 
             <ComboBox x:Name="cbAux"
                      Grid.Row="2"
-                     Width="35"
+                     Width="60"
                      FontSize="15"
-                     VerticalAlignment="Center" HorizontalAlignment="Right"
-                     Margin="0 0 10 0"
+                     VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                     Margin="130 0 0 10"
                      IsEditable="True"
                      IsReadOnly="True"
                      SelectedIndex="{Binding AuxIndex}">
@@ -219,30 +219,26 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
 
                     <RadioButton Content="Luft" FontSize="15" 
                                  Grid.Column="0" Grid.Row="0" 
-                                 Margin="10" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                 Margin="10 0" 
+                                 VerticalAlignment="Top" HorizontalAlignment="Left"
                                  IsChecked="{Binding Aircooling}"
                                  Command="{Binding CoolantModeChangedCommand}"/>
 
                     <RadioButton Content="NaCl" FontSize="15"
                                  Grid.Column="1" Grid.Row="0"
-                                  Margin="10" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                  Margin="10 0" 
+                                 VerticalAlignment="Top" HorizontalAlignment="Left"
                                  IsEnabled="{Binding NaclButtonEnabled}"
                                  IsChecked="{Binding Naclcooling}"
                                  Command="{Binding CoolantModeChangedCommand}"/>
 
                     <RadioButton Content="Luft und Wasser" FontSize="15"
-                                 Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  
-                                 Margin="10 0 0 0" 
-                                 VerticalAlignment="Center" HorizontalAlignment="Left"
+                                 Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"  
+                                 Margin="10 25 0 0" 
+                                 VerticalAlignment="Top" HorizontalAlignment="Left"
                                  IsChecked="{Binding AirWatercooling}"
                                  Command="{Binding CoolantModeChangedCommand}"/>
 
