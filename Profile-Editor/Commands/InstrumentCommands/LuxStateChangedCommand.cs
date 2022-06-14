@@ -43,15 +43,15 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
             if(viewModel.LuxState == true)
             {
-                lux = $"2{level}";
+                lux = $"{level}1";
             }
             else
             {
-                lux = $"1{level}";
+                lux = $"{level}2";
                 viewModel.LuxLevelEnabled = false;
             }
 
-            string luxConverted = ConvertByteToDecString(Convert.ToByte(lux));
+            string luxConverted = HexToString(lux);
             return luxConverted;
         }
 
@@ -60,9 +60,9 @@ namespace Profile_Editor.Commands.InstrumentCommands
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
-        private string ConvertByteToDecString(byte mode)
+        private string HexToString(string mode)
         {
-            int value = (Int32)mode;
+            int value = Convert.ToInt32(mode, 16);
             return value.ToString();
         }
     }
