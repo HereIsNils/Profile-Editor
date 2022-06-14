@@ -42,12 +42,11 @@
 
             <ComboBox x:Name="cbLanguage"
                       FontSize="15"
-                      Width="105"
+                      Width="120"
                       VerticalAlignment="Center" HorizontalAlignment="Left"
                       IsEditable="True"
                       IsReadOnly="True"
                       Margin="75 0 0 0"
-                      Text="Sprache"
                       SelectedIndex="{Binding Index}">
 
                 <Behaviors:Interaction.Triggers>
