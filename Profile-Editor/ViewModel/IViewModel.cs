@@ -194,12 +194,19 @@ namespace Profile_Editor.ViewModel
             int i0 = i >> 4;
             string coolMode = hex.Substring(1, 1);
 
-            if (hex == "11") return; // ancl and mode off
-            if(coolMode == "2")
+            if (hex == "11") 
             {
-                CoolantState = true;
-                RadioGridEnabled = true;
-            }
+                Naclcooling = false;
+                NaclButtonEnabled = false;
+
+                CoolantState = false;
+                RadioGridEnabled = false;
+
+                Aircooling = false;
+                AirWatercooling = false;
+                
+                return; // ancl and mode off
+            } 
 
             if (i0 == 2)
             {
@@ -207,8 +214,14 @@ namespace Profile_Editor.ViewModel
                 NaclButtonEnabled = true;
             } else
             {
+                Naclcooling = false;
                 NaclButtonEnabled = false;
             }
+
+            if (coolMode == "1") return;
+            
+            CoolantState = true;
+            RadioGridEnabled = true;
 
             switch (coolMode)
             {
