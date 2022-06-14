@@ -160,7 +160,7 @@ namespace Profile_Editor.ViewModel
         }
         #endregion States
 
-        public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
+        public IViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings) // aux and coolmode broken
         {
             AppLevelCommand = new AppLevelCommand(this); // aorn not needed
             HolderChangedCommand = new HolderChangedCommand(this);
