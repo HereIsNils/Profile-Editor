@@ -55,7 +55,7 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Margin="20 10 0 0"
-                    ToolTip="Save"
+                    ToolTip="Speichern"
                     Command="{Binding SaveDataCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/save_icon.png"/>
@@ -85,7 +85,7 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right"
                     Margin="0 60 20 0"
-                    ToolTip="Import"
+                    ToolTip="Speichern als"
                     Command="{Binding SaveDataAsCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/saveas_icon.png"/>
@@ -100,7 +100,7 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Margin="20 60 0 0"
-                    ToolTip="Save"
+                    ToolTip="Einstellungen"
                     Command="{Binding DefaultFileCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/settings_icon.png"/>
