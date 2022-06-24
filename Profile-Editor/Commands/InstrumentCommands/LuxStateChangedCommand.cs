@@ -37,13 +37,14 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         private string GetLux()
         {
-            string lux = "11"; // level 1, lux off
+            string lux = "12"; // level 1, lux off
 
             string level = viewModel.LuxLevel.ToString();
 
             if(viewModel.LuxState == true)
             {
                 lux = $"{level}1";
+                viewModel.LuxLevelEnabled = true;
             }
             else
             {

@@ -273,7 +273,11 @@ namespace Profile_Editor.ViewModel
             string hexState = hex.Substring(1, 1);
             LuxLevel = i0;
 
-           if(hexState == "2") return; // lux off
+           if(hexState == "2")
+            {
+                LuxLevelEnabled = false;
+                return;
+            } // lux off
             LuxLevelEnabled = true;
             LuxState = true;
         }
