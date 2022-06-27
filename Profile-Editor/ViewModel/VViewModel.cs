@@ -14,6 +14,7 @@ namespace Profile_Editor.ViewModel
     {
         MainViewModel mainViewModel;
         public ICommand LanguageChangeCommand { get; set; }
+        public ICommand ShowHelp { get; set; }
 
         private int _Index;
         public int Index
@@ -38,6 +39,7 @@ namespace Profile_Editor.ViewModel
         public VViewModel(UserSettingsStore userSettingsStore, UserSettings userSettings)
         {
             LanguageChangeCommand = new LanguageChangeCommand(userSettingsStore, this);
+            ShowHelp = new ShowHelp();
 
             UserSettingsStore = userSettingsStore;
             this.userSettings = userSettings;

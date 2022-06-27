@@ -21,6 +21,7 @@ namespace Profile_Editor.ViewModel
         public ICommand Btn3Command { get; set; }
         public ICommand Btn4Command { get; set; }
         public ICommand Btn5Command { get; set; }
+        public ICommand ShowHelp { get; set; }
         #endregion Commands
 
         private UserSettingsStore _userSettingsStore;
@@ -212,6 +213,7 @@ namespace Profile_Editor.ViewModel
         {
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;
+            ShowHelp = new ShowHelp();
             Timer1Command = new Timer1Command(userSettingsStore, this);
             Timer2Command = new Timer2Command(userSettingsStore, this);
             Timer3Command = new Timer3Command(userSettingsStore, this);

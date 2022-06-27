@@ -12,6 +12,7 @@ namespace Profile_Editor.ViewModel
         public MainViewModel viewModel;
         private int _position;
 
+        #region Commands
         public ICommand CBPositionsChangedCommand { get; set; }
         public ICommand ChairHeightCommand { get; set; }
         public ICommand BackHeightCommand { get; set; }
@@ -19,6 +20,8 @@ namespace Profile_Editor.ViewModel
         public ICommand HeadrestTiltCommand { get; set; }
         public ICommand SeatCorrectionCommand { get; set; }
         public ICommand SeatTiltCommand { get; set; }
+        public ICommand ShowHelp { get; set; }
+        #endregion Commands
 
         private UserSettingsStore _userSettingsStore;
         public UserSettingsStore UserSettingsStore
@@ -115,6 +118,7 @@ namespace Profile_Editor.ViewModel
             HeadrestTiltCommand = new HeadrestTiltCommand(userSettingsStore, this);
             SeatCorrectionCommand = new SeatCorrectionCommand(userSettingsStore, this);
             SeatTiltCommand = new SeatTiltCommand(userSettingsStore, this);
+            ShowHelp = new ShowHelp();
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;

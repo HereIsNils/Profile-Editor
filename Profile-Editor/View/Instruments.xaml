@@ -24,7 +24,8 @@
                 Height="25"
                 Width="25"
                 HorizontalAlignment="Left"
-                BorderBrush="{x:Null}">
+                BorderBrush="{x:Null}"
+                Command="{Binding ShowHelp}">
             <Button.Background>
                 <ImageBrush ImageSource="/Profile-Editor;component/View/lightbulb_icon.png"/>
             </Button.Background>

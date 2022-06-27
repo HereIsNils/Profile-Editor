@@ -35,6 +35,7 @@ namespace Profile_Editor.ViewModel
         public ICommand AuxChangedCommand { get; set; }
         public ICommand CoolantModeChangedCommand { get; set; }
         public ICommand LuxStateChangedCommand { get; set; }
+        public ICommand ShowHelp { get; set; }
         #endregion Commands
 
         #region IViewModel Members
@@ -169,6 +170,8 @@ namespace Profile_Editor.ViewModel
             AuxChangedCommand = new AuxChangedCommand(userSettingsStore, this);
             CoolantModeChangedCommand = new CoolantModeChangedCommand(userSettingsStore, this);
             LuxStateChangedCommand = new LuxStateChangedCommand(userSettingsStore, this);
+            ShowHelp = new ShowHelp();
+
 
             _userSettingsStore = userSettingsStore;
             this.userSettings = userSettings;

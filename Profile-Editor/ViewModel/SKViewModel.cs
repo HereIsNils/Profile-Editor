@@ -20,6 +20,7 @@ namespace Profile_Editor.ViewModel
         public ICommand Btn4Command { get; set; }
         public ICommand Btn5Command { get; set; }
         public ICommand Btn6Command { get; set; }
+        public ICommand ShowHelp { get; set; }
 
         private UserSettingsStore _userSettingsStore;
         public UserSettingsStore UserSettingsStore
@@ -110,6 +111,7 @@ namespace Profile_Editor.ViewModel
             Btn4Command = new Bt4Command(userSettingsStore);
             Btn5Command = new Bt5Command(userSettingsStore);
             Btn6Command = new Bt6Command(userSettingsStore);
+            ShowHelp = new ShowHelp();
 
             this.userSettings = userSettings;
             _userSettingsStore = userSettingsStore;

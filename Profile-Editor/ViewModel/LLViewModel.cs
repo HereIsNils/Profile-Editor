@@ -18,6 +18,7 @@ namespace Profile_Editor.ViewModel
         public ICommand ColorTempCommand { get; set; }
         public ICommand DimModeCommand { get; set; }
         public ICommand DimIntensityCommand { get; set; }
+        public ICommand ShowHelp { get; set; }
 
         private UserSettingsStore _userSettingsStore;
         public UserSettingsStore UserSettingsStore
@@ -84,6 +85,7 @@ namespace Profile_Editor.ViewModel
             ColorTempCommand = new ColorTempCommand(userSettingsStore, this);
             DimModeCommand = new DimModeCommand(userSettingsStore);
             DimIntensityCommand = new DimIntensityCommand(userSettingsStore, this);
+            ShowHelp = new ShowHelp();
 
             UserSettingsStore = userSettingsStore;
             this.userSettings = userSettings;
