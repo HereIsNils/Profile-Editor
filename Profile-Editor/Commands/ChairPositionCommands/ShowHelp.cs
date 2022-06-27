@@ -19,7 +19,8 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            string text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ";
+            string text = "Mit der Combobox kann die gewünschte Postition ausgewählt werden, die konfiguriert werden möchte.\n \nDie Slider geben den jeweiligen Wert in Prozent an und können auf die gewünschte Position gestellt werden.";
+
             MessageBox.Show(text);
         }
     }
