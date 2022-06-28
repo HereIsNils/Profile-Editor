@@ -19,7 +19,11 @@ namespace Profile_Editor.Commands.InstrumentCommands
 
         public void Execute(object? parameter)
         {
-            string text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ";
+            string text = "App Level zeigt das aktuell ausgewählte App Level an. Das App Level kann oben links ausgewählt werden. " +
+                "Weitere Informationen dazu finden Sie in der Kurzanleitung Profil-Editor.\n" +
+                "\nDer Halter, welcher konfiguriert werden soll, wird mit der Combobox festgelegt. Der an der Einheit angeschlossene Instrumententyp" +
+                "wird dabei ignoriert.\n" +
+                "\nDie Fußpedalmitte wird über den Slider festgelegt. Der Slider hat einen Minimalwert von 1 und einen Maximalwert von 128.";
             MessageBox.Show(text);
         }
     }
