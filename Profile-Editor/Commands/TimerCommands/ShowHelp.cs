@@ -19,7 +19,9 @@ namespace Profile_Editor.Commands.TimerCommands
 
         public void Execute(object? parameter)
         {
-            string text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ";
+            string text = "Ein Timer setzt sich aus der Splate Minute und Sekunde zusammen. " +
+                "In der Spalte Minute kann die Minutenanzahl des Timers festgelegt werden und in der Spalte Sekunde die Sekundenanzahl\n" +
+                "\nUm einen Timer in eine Stoppuhr umzukonfigurieren, muss der Button auf der linken Seite gedrückt werden. Wenn der Button blau ausgefüllt ist, ist die Stoppuhr aktiv.";
             MessageBox.Show(text);
         }
     }

@@ -19,7 +19,8 @@ namespace Profile_Editor.Commands.ChairPositionCommands
 
         public void Execute(object? parameter)
         {
-            string text = "Mit der Combobox kann die gewünschte Postition ausgewählt werden, die konfiguriert werden möchte.\n \nDie Slider geben den jeweiligen Wert in Prozent an und können auf die gewünschte Position gestellt werden.";
+            string text = "Mit der Combobox kann die gewünschte Postition ausgewählt werden, die konfiguriert werden möchte.\n " +
+                "\nDie Slider geben den jeweiligen Wert in Prozent an und können auf die gewünschte Position gestellt werden.";
 
             MessageBox.Show(text);
         }
