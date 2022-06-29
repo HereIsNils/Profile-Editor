@@ -21,7 +21,7 @@ namespace Profile_Editor.Commands.LedLightCommands
         {
             string text = "Der Dimm-Modus wird über die Combobox festgelegt.\n " +
                 "\nDie Slider legen die Stufe des jeweiligen Wertes fest. Helligkeit und Modus Helligkeit haben einen minimalen Wert von 1 und einen maximalen Wert von 5.\n" +
-                "\n Der Slider für Farbtemperatur hat ebenfalls 5 Stufen. Hier entspricht die 1. Stufe einer Farbtemperatur von 4000 K. Die 5. Stufe enstpricht 6000 K.";
+                "\nDer Slider für Farbtemperatur hat ebenfalls 5 Stufen. Hier entspricht die 1. Stufe einer Farbtemperatur von 4000 K. Die 5. Stufe enstpricht 6000 K.";
             MessageBox.Show(text);
         }
     }
