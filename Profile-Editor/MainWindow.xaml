@@ -100,7 +100,7 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Margin="20 60 0 0"
-                    ToolTip="Einstellungen"
+                    ToolTip="Startup"
                     Command="{Binding DefaultFileCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/settings_icon.png"/>
